@@ -1,0 +1,8 @@
+---
+Name: tis-zuzana
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+Debug:
+  friendly_error_httpcode: true
