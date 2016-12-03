@@ -1,0 +1,32 @@
+{#{% import 'components/macros/page.twig' as page %}#}
+<!DOCTYPE html>
+<html lang="sk" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="turbolinks-cache-control" content="no-cache">
+
+    {% include 'components/widgets/Meta.twig' with c.Meta %}
+
+    {#<script src="/static/scripts/app-c.min.js?v=0.1"></script>#}
+
+    {#<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=latin-ext" rel="stylesheet">#}
+
+    <!-- CSS -->
+    {#<link href="/static/styles/app.min.css?v=0.3" rel="stylesheet">#}
+
+    {#<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->#}
+</head>
+
+<body>
+    {% include 'components/partials/Header.twig' %}
+
+    {% block header %}{% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% include 'components/partials/Footer.twig' %}
+
+    {#<script src="/static/scripts/app.js?v=0.1" data-turbolinks-eval="false"></script>#}
+</body>
+</html>

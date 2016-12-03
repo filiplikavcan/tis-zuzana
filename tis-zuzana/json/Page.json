@@ -1,0 +1,8 @@
+{
+  "include": [
+    "@Meta",
+    "@Menu",
+    "@SocialNetworks",
+    "@Copyright"
+  ]
+}

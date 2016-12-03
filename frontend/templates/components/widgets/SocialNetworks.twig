@@ -1,0 +1,7 @@
+{% for SocialNetwork in Items %}
+    <a href="{{ SocialNetwork.Link }}" title="{{ SocialNetwork.Title }}" target="_blank" class="icon icon-{{ SocialNetwork.Name }}">
+        <svg role="img" title="Behance">
+            <use xlink:href="/static/assets/icons.svg#{{ SocialNetwork.Name }}"/>
+        </svg>
+    </a>
+{% endfor %}

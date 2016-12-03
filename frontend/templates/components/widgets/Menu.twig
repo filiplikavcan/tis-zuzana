@@ -1,0 +1,7 @@
+<ul class="nav navbar-nav navbar-right">
+    {% for Item in Items %}
+        <li{% if Item.LinkingMode == 'current' %} class="active"{% endif %}>
+            <a href="{{ Item.Link }}" title="{{ Item.MenuTitle }}">{{ Item.MenuTitle }}</a>
+        </li>
+    {% endfor %}
+</ul>
