@@ -1,0 +1,18 @@
+.prose {
+  margin-top: rem-calc(20);
+}
+
+.info-list {
+  @include grid-row;
+  @include grid-layout($n: 1, $selector: "li");
+  list-style: none;
+  li {
+
+  }
+  @include breakpoint(large){
+    @include grid-layout($n: 2, $selector: "li");
+  }
+  @include breakpoint(xlarge){
+    @include grid-layout($n: 3, $selector: "li");
+  }
+}

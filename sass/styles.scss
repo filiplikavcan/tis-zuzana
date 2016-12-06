@@ -1,0 +1,12 @@
+// ====================
+// Import of the whole libriry of FOUNDATION - just mixins
+@import '../node_modules/foundation-sites/scss/foundation';
+
+@include foundation-everything;
+
+// ====================
+// Custom elements - style of the page
+@import 'custom/header';
+@import 'custom/prose';
+@import 'custom/timeline';
+@import 'custom/footer';

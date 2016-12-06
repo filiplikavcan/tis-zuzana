@@ -1,0 +1,32 @@
+{
+  "name": "tis-zuzana",
+  "version": "1.0.0",
+  "description": "Web na podporu Zuzany",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filiplikavcan/tis-zuzana.git"
+  },
+  "keywords": [
+    "css",
+    "twig",
+    "html",
+    "php"
+  ],
+  "author": "sk.digital",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/filiplikavcan/tis-zuzana/issues"
+  },
+  "homepage": "https://github.com/filiplikavcan/tis-zuzana#readme",
+  "dependencies": {
+    "foundation-sites": "^6.2.4",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^2.3.2"
+  }
+}
