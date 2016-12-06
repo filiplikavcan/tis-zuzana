@@ -1,5 +1,9 @@
 {% extends "layouts/Page.twig" %}
 
 {% block content %}
-    as
+    {% set Fields = c.SupporterForm.Fields|map('Name') %}
+
+    {{ c.SupporterForm.Fields[0].Name }}
+
+    {{ Fields.FirstName.Label }}
 {% endblock %}
