@@ -1,0 +1,17 @@
+{% set FormFields = Form.Fields|map('Name') %}
+
+{% if Form.Errors %}
+    <div class="form-error">
+        {{ f.errors(Form) }}
+    </div>
+{% endif %}
+
+{{ f.begin(Form, FormFields, { class: "form-horizontal" }) }}
+    {{ f.label(FormFields.Email) }}
+    {{ f.input(FormFields.Email) }}
+    {{ f.label(FormFields.FirstName) }}
+    {{ f.input(FormFields.FirstName) }}
+    {{ f.label(FormFields.LastName) }}
+    {{ f.input(FormFields.LastName) }}
+    {{ f.input(FormFields._submit) }}
+{{ f.end() }}

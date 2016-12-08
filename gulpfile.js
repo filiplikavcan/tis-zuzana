@@ -15,6 +15,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const minifyCss = require('gulp-minify-css');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
+const del = require('del');
 
 // *******************************
 // *         SASS TASKS          *
@@ -52,6 +53,8 @@ gulp.task('js', function() {
 // *******************************
 
 gulp.task('assets', function() {
+    del(['./static/assets/**']);
+
     return gulp.src('frontend/assets/**/*.*')
         .pipe(gulp.dest('./static/assets'));
 });

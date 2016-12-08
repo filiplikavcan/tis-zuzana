@@ -4,8 +4,5 @@
     "@Menu",
     "@SocialNetworks",
     "@Copyright"
-  ],
-  "SupporterForm": {
-    "include": "@Form:Supporter"
-  }
+  ]
 }

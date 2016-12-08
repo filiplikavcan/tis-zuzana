@@ -1,0 +1,24 @@
+{
+  "include": "'Page.json'",
+  "SupporterForm": {
+    "include": "@Form:Supporter"
+  },
+  "Counter from getCounter()": {
+    "Days": "Days",
+    "Supporters": "Supporters",
+    "Answers": "Answers"
+  },
+  "About": {
+    "Title": "AboutTitle",
+    "Content": "Content"
+  },
+  "Support": {
+    "Title": "SupportTitle",
+    "Questions from getQuestions()": [
+      {
+        "Title": "Title",
+        "Content": "Content"
+      }
+    ]
+  }
+}
