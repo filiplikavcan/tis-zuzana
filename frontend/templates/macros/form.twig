@@ -1,0 +1,95 @@
+{# attributes #}
+    {%- macro attributes(Attributes, AdditionalAttributes) -%}
+        {%- for Name, Value in AdditionalAttributes -%}
+            {# @var Attributes \ArrayAccess #}
+            {%- if Attributes[Name] -%}
+                {%- set AttributeValue = Attributes[Name].Value ~ ' ' ~ Value %}
+            {%- else -%}
+                {%- set AttributeValue = Value -%}
+            {%-  endif -%}
+            {%- set Attributes = Attributes|merge({(Name): {Value: AttributeValue}}) -%}
+        {%- endfor -%}
+        {%- for Name, Attribute  in Attributes %} {{ Name }}="{{ Attribute.Value }}"{%- endfor -%}
+    {%- endmacro -%}
+
+{# form opening tag + token field #}
+    {%- macro begin(Form, Fields, AdditionalAttributes) -%}
+        {%- import _self as f -%}
+        {%- set Attributes = Form.Attributes|map('Name') -%}
+        <form {{ f.attributes(Attributes, AdditionalAttributes) }}>
+        {%- if Fields._token_ -%}
+            {{ f.input(Fields._token_) }}
+        {%- endif -%}
+    {%- endmacro -%}
+
+{# form closing tag #}
+    {%- macro end() -%}
+        </form>
+    {%- endmacro -%}
+
+{# form errors #}
+    {% macro errors(Form) %}
+        {% if Form.Errors %}
+            <div class="error">
+                {% for Error in Form.Errors %}
+                    {{ Error }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endmacro %}
+
+{# field label #}
+    {% macro label(Field) %}
+        <label for="{{ Field.Id }}"{% if Field.Errors %} class="field-error"{% endif %}>{{ Field.Label }}
+            {% if Field.Errors %}<br>{% for Error in Field.Errors %}{{ Error }}{% endfor %}{% endif %}
+        </label>
+    {% endmacro %}
+
+{# input field #}
+    {% macro input(Field, AdditionalAttributes) %}
+        {% import _self as f %}
+
+        {% if Field.Errors %}
+            <div class="field-error">
+        {% endif %}
+
+        <input {{ f.attributes(Field.Attributes|map('Name'), AdditionalAttributes) }}>
+
+        {% if Field.Errors %}
+            </div>
+        {% endif %}
+    {% endmacro %}
+
+{# input field #}
+    {% macro texarea(field, additional_attributes) %}
+        {% import _self as f %}
+
+        {% if field.errors %}
+            <div class="field-error">
+        {% endif %}
+
+        <textarea {{ f.attributes(field.html_attributes, additional_attributes) }}>{{ field.value }}</textarea>
+
+        {% if field.errors %}
+            </div>
+        {% endif %}
+    {% endmacro %}
+
+{# TODO: select field #}
+    {% macro select(field, additional_attributes) %}
+        {% import _self as f %}
+
+        {% if field.errors %}
+            <div class="field-error">
+        {% endif %}
+
+        <select {{ f.attributes(field.html_attributes, additional_attributes) }}>
+        {% for value, text in field.items %}
+            <option value="{{ value }}"{% if value == field.value or value in field.value %} selected="selected"{% endif %}>{{ text }}</option>
+        {% endfor %}
+        </select>
+
+        {% if field.errors %}
+            </div>
+        {% endif %}
+    {% endmacro %}

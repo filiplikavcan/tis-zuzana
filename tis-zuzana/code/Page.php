@@ -33,4 +33,9 @@ class Page_Controller extends Cleopas_Controllers_Base
             ->setOwnerName('TIS')
             ->setFromYear(2016));
     }
+
+    protected function setupForms()
+    {
+        $this->addFormWidget('Supporter');
+    }
 }
