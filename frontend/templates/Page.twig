@@ -1,9 +1,24 @@
 {% extends "layouts/Page.twig" %}
+{% import 'macros/form.twig' as f %}
 
 {% block content %}
-    {% set Fields = c.SupporterForm.Fields|map('Name') %}
+    {% set SupporterForm = c.SupporterForm %}
+    {% set SupporterFormFields = SupporterForm.Fields|map('Name') %}
 
-    {{ c.SupporterForm.Fields[0].Name }}
+    {% if SupporterForm.Errors %}
+        <div class="form-error">
+            {{ f.errors(SupporterForm) }}
+        </div>
+    {% endif %}
 
-    {{ Fields.FirstName.Label }}
+    {{ f.begin(SupporterForm, SupporterFormFields, { class: "form-horizontal" }) }}
+        {{ f.label(SupporterFormFields.Email) }}
+        {{ f.input(SupporterFormFields.Email) }}
+        {{ f.label(SupporterFormFields.FirstName) }}
+        {{ f.input(SupporterFormFields.FirstName) }}
+        {{ f.label(SupporterFormFields.LastName) }}
+        {{ f.input(SupporterFormFields.LastName) }}
+        {{ f.input(SupporterFormFields._submit) }}
+    {{ f.end() }}
+
 {% endblock %}
