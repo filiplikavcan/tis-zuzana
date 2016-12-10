@@ -1,9 +1,18 @@
 h2 {
-  margin-top: rem-calc(6);
+  margin-top: 0;//rem-calc(6);
+  margin-bottom: rem-calc(12);
 }
 
 @include breakpoint(medium) {
   h2 {
-    margin-top: rem-calc(12);
+    margin-top: 0;//rem-calc(12);
+  }
+}
+
+p {
+  margin-bottom: rem-calc(10);
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }

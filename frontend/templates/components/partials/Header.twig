@@ -1,9 +1,22 @@
 <header>
 	<div class="topbar">
-		<a href="#" class="menu-toggle js-open-menu">MENU</a>
-		<nav class="menu-main">
+		<div class="logo">
+			<a target="_blank" href="http://transparency.sk">
+				<img src="/static/assets/transparency-logo.svg" alt="Logo Transparency International">
+			</a>
+		</div>
+		<div class="actions">
+			<a href="#" class="menu-toggle js-open-menu">MENU</a>
+		</div>
+		<div class="nav-wrapper">
 			<a href="#" class="close-menu js-close-menu">CLOSE</a>
-            {% include 'components/widgets/Menu.twig' with c.Menu %}
-		</nav>
+			<nav class="menu-main">
+                {% include 'components/widgets/Menu.twig' with c.Menu %}
+			</nav>
+			<ul class="lang-switch">
+				<li><a class="active" href="#"><span>sk</span></a></li>
+				<li><a href="#"><span>en</span></a></li>
+			</ul>
+		</div>
 	</div>
 </header>

@@ -1,0 +1,30 @@
+<div class="prose panel spread-the-word">
+    <div class="text-column">
+        <div class="prose">
+            <div class="share-option">
+                <p>
+                    <a class="button" href="https://www.facebook.com/sharer.php?title={{ 'Odpovedzte Zuzane'|url_encode }}&description={{ 'Podporujem Zuzanu a chcem, aby minister Lajčák odpovedal na dôležité otázky, ktoré sa pýta.'|url_encode }}&u=http%3A%2F%2Fodpovedztezuzane.sk">
+                        Zdielať na FB
+                    </a>
+                </p>
+
+                <p>
+                    Dajte vedieť svojim kamarátom, že ste podporili dobrú vec. Možno sa pridajú aj oni.
+                </p>
+            </div>
+
+            <div class="share-option">
+                <p>
+                    <a class="button" href="mailto:minister@huhu.sk?subject=Odpovedzte Zuzane&body={{ c.EmailTemplate|url_encode }}">Poslať email</a>
+                </p>
+
+                <p>
+                    Pošlite ministrovi email na adresu <code>minister@huhu.sk</code>. Ak sa Vám obsah emailu nepredvyplní po kliknutí na tlačidlo, môžete skopírovať nižšie uvedený text a poslať email ručne.
+                </p>
+            </div>
+        </div>
+
+
+        <blockquote style='text-align: left; font-family: Courier, "Courier New", monospace; font-size: 14px; color: black; margin-top: 30px;'>{{ c.EmailTemplate|nl2br }}</blockquote>
+    </div>
+</div>

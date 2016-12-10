@@ -13,7 +13,7 @@ class SupporterFormFactory extends BaseFormFactory
         $form->addText('City', 'City');
         $form->addCheckbox('Hide', 'Nechcem, aby bolo moje meno zverejnené');
 
-        $submit = $form->addSubmit('submit', 'Chcem, aby minister odpovedal Zuzane');
+        $submit = $form->addSubmit('submit', 'Odoslať');
 
         $submit->onClick[] = array($this, 'onSubmit');
 
@@ -43,7 +43,7 @@ class SupporterFormFactory extends BaseFormFactory
 
                 $supporter->write();
 
-                $supporter->confirm();
+                //$supporter->confirm();
 
                 $form->markAsStored();
             }

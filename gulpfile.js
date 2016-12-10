@@ -34,6 +34,13 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('./frontend/css'));
 });
 
+gulp.task('css', function() {
+    del(['./static/css/**']);
+
+    return gulp.src('frontend/css/**/*.*')
+        .pipe(gulp.dest('./static/css'));
+});
+
 // *******************************
 // *         JS TASKS          *
 // *******************************
@@ -56,13 +63,6 @@ gulp.task('assets', function() {
 
     return gulp.src('frontend/assets/**/*.*')
         .pipe(gulp.dest('./static/assets'));
-});
-
-gulp.task('css', function() {
-    del(['./static/css/**']);
-
-    return gulp.src('frontend/css/**/*.*')
-        .pipe(gulp.dest('./static/css'));
 });
 
 // *******************************

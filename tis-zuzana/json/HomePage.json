@@ -1,9 +1,14 @@
 {
   "include": "'Page.json'",
+  "EmailTemplate": "EmailTemplate",
   "SupporterForm": {
     "include": "@Form:Supporter",
     "Title": "SupportTitle",
-    "Content": "SupportContent"
+    "Content": "SupportContent",
+    "ThankYou": {
+      "Title": "ThankYouTitle",
+      "Content": "ThankYouContent"
+    }
   },
   "Counter from getCounter()": {
     "Days": "Days",
@@ -18,6 +23,16 @@
     "Title": "QuestionsTitle",
     "Content": "QuestionsContent",
     "Questions from getQuestions()": [
+      {
+        "Title": "Title",
+        "Content": "Content"
+      }
+    ]
+  },
+  "Goals": {
+    "Title": "GoalsTitle",
+    "Content": "GoalsContent",
+    "Goals from getGoals()": [
       {
         "Title": "Title",
         "Content": "Content"

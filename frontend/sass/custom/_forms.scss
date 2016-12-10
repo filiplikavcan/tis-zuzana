@@ -1,3 +1,9 @@
+.form-wrapper {
+	margin-top: calc-rem(50);
+	padding-left: calc-rem(15);
+	padding-right: calc-rem(15);
+}
+
 .support-form {
 	@include grid-row;
 
@@ -95,7 +101,6 @@
   }
   @include breakpoint(large){
     max-width: calc-rem(700);
-    .check-field,
   	.form-actions,
   	.select-field,
   	.text-field,
@@ -104,6 +109,8 @@
     @include grid-column-unposition;
     clear: none;
     }
+
+	.check-field,
     .email-field {
       @include grid-col-size(12);
       // float: left;

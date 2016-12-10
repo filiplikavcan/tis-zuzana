@@ -1,23 +1,35 @@
 .panel {
+	padding-top: rem-calc(60);
+	padding-bottom: rem-calc(60);
+
+	@include breakpoint(medium) {
+		padding-top: rem-calc(75);
+		padding-bottom: rem-calc(75);
+	}
+
 	&.gray {
 		background-color: $white-cat;
+	}
+
+	&.warm {
+		background-color: $pink-future;
 	}
 }
 
 // Basic text column
 .text-column {
 	@include grid-column(12);
-	padding-top: rem-calc(20);
-	margin-bottom: rem-calc(30);
+	padding-left: rem-calc(15);
+	padding-right: rem-calc(15);
+
 	text-align: center;
-	&.no-margin {
-		margin-bottom: 0 !important;
-	}
+	font-size: calc-rem(20);
+
 	@include breakpoint(medium) {
-		 @include grid-col-size(8);
+		@include grid-col-size(8);
 		@include grid-col-pos(center);
 	}
 	@include breakpoint(large) {
-		 @include grid-col-size(6);
+		@include grid-col-size(8);
 	}
 }

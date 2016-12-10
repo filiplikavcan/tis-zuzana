@@ -1,33 +1,62 @@
 {% set FormFields = Form.Fields|map('Name') %}
 
-<section>
-    <h2>
-        {{ Form.Title }}
-    </h2>
+<div class="panel">
+    <div class="prose">
+        <div class="text-column no-margin">
+            {% if Form.IsSubmitted and Form.IsValid %}
+                <h2>{{ Form.ThankYou.Title }}</h2>
 
-    {{ Form.Content|shortcodes }}
+                {{ Form.ThankYou.Content|shortcodes }}
+            {% else %}
+                <h2>{{ Form.Title }}</h2>
 
+                {{ Form.Content|shortcodes }}
+            {% endif %}
+        </div>
+    </div>
     {% if Form.IsSubmitted and Form.IsValid %}
-        Dakujeme. {% if Form.WasStored %}as {% endif %}
     {% else %}
-        {% if Form.Errors %}
-            <div class="form-error">
-                {{ f.errors(Form) }}
-            </div>
-        {% endif %}
+        <div class="form-wrapper">
+            {% if Form.Errors %}
+                <div class="form-error">
+                    {{ f.errors(Form) }}
+                </div>
+            {% endif %}
 
-        {{ f.begin(Form, FormFields, { class: "form-horizontal" }) }}
-            {{ f.label(FormFields.Email) }}
-            {{ f.input(FormFields.Email) }}
-            {{ f.label(FormFields.FirstName) }}
-            {{ f.input(FormFields.FirstName) }}
-            {{ f.label(FormFields.LastName) }}
-            {{ f.input(FormFields.LastName) }}
-            {{ f.label(FormFields.City) }}
-            {{ f.input(FormFields.City) }}
-            {{ f.input(FormFields.Hide) }}
-            {{ f.label(FormFields.Hide) }}
-            {{ f.input(FormFields._submit) }}
-        {{ f.end() }}
+            {{ f.begin(Form, FormFields, { class: "support-form" }) }}
+                <div class="text-field">
+                    {{ f.label(FormFields.FirstName) }}
+                    {{ f.input(FormFields.FirstName) }}
+                </div>
+                <div class="text-field">
+                    {{ f.label(FormFields.LastName) }}
+                    {{ f.input(FormFields.LastName) }}
+                </div>
+                <div class="email-field">
+                    {{ f.label(FormFields.Email) }}
+                    {{ f.input(FormFields.Email) }}
+                </div>
+                <div class="select-field">
+                    <label for="country">Krajina</label>
+                    <select name="cars">
+                        <option value="slovakia" selected>Slovakia</option>
+                        <option value="cesko">Cesko</option>
+                        <option value="francuzsko">francuzsko</option>
+                        <option value="nemecko">Nemecko</option>
+                    </select>
+                </div>
+                <div class="text-field">
+                    {{ f.label(FormFields.City) }}
+                    {{ f.input(FormFields.City) }}
+                </div>
+                <fieldset class="check-field">
+                    {{ f.input(FormFields.Hide) }}
+                    {{ f.label(FormFields.Hide) }}
+                </fieldset>
+                <div class="form-actions">
+                    {{ f.input(FormFields._submit, { class: 'button' } ) }}
+                </div>
+            {{ f.end() }}
+        </div>
     {% endif %}
-</section>
+</div>

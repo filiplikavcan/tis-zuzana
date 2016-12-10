@@ -1,0 +1,20 @@
+<div class="panel warm">
+    <div class="prose">
+        <div class="text-column">
+            <h2>{{ c.Goals.Title }}</h2>
+            {{ c.Goals.Content|shortcodes }}
+        </div>
+        <ul class="questions-list">
+            {% for Goal in c.Goals.Goals %}
+                <li>
+                    <div>
+                        <h3>{{ Goal.Title }}</h3>
+                    </div>
+                    <div>
+                        {{ Goal.Content|shortcodes }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

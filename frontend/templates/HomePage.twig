@@ -2,47 +2,35 @@
 {% import 'macros/form.twig' as f %}
 
 {% block header %}
-    {#<div class="hero-area">#}
-        {#<div class="hero-content">#}
-            {#<div class="content-column">#}
-                {#<h1>Podporujem Zuzanu</h1>#}
-                {#<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nam reiciendis eos facere suscipit numquam laboriosam voluptates, cumque dolorem!</p>#}
-                {#<a class="button" href="#">ACTION</a>#}
-            {#</div>#}
-        {#</div>#}
-    {#</div>#}
-
-    <div style="padding-top: 100px;"></div>
+    {% if not c.SupporterForm.IsSubmitted %}
+        <header class="hero-area">
+            <div class="hero-content">
+                <div class="content-column">
+                    <h1>Odpovedzte Zuzane!</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nam reiciendis eos facere suscipit numquam laboriosam voluptates, cumque dolorem!</p>
+                    <a class="button" href="#">Zisti viac!</a>
+                </div>
+            </div>
+        </header>
+    {% else %}
+        <div style="padding-top: 50px;"></div>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
-    {% include 'components/Counter.twig' with { Counter: c.Counter } %}
+    <main>
+        {% if not c.SupporterForm.IsSubmitted %}
+            {% include 'components/Counter.twig' with { Counter: c.Counter } %}
+            {% include 'components/About.twig' %}
+            {% include 'components/Questions.twig' %}
+        {% endif %}
 
-    {% if not c.SupporterForm.IsSubmitted %}
-        <section>
-            <h2>
-                {{ c.About.Title }}
-            </h2>
+        {% include 'components/SupportForm.twig' with { Form: c.SupporterForm } %}
 
-            {{ c.About.Content|shortcodes }}
-        </section>
-
-        <section>
-            <h2>
-                {{ c.Questions.Title }}
-            </h2>
-
-            {{ c.Questions.Content|shortcodes }}
-
-            {% for Question in c.Questions.Questions %}
-                <h4>
-                    {{ loop.index }}. {{ Question.Title }}
-                </h4>
-
-                {{ Question.Content|shortcodes }}
-            {% endfor %}
-        </section>
-    {% endif %}
-
-    {% include 'components/SupportForm.twig' with { Form: c.SupporterForm } %}
+        {% if not c.SupporterForm.IsSubmitted %}
+            {% include 'components/Goals.twig' %}
+        {% else %}
+            {% include 'components/SpreadTheWord.twig' %}
+        {% endif %}
+    </main>
 {% endblock %}

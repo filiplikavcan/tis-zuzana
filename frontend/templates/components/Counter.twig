@@ -1,19 +1,23 @@
-<h2>
-    Počítadlá
-</h2>
+{#<div class="prose">#}
+    {#<div class="text-column" style="text-align: left;">#}
+        {#<h2>#}
+            {#Počítadlá#}
+        {#</h2>#}
 
-<ul>
-    {% if Counter.Days > 0 %}
-    <li>
-        Kolko dni do deadlinu vyzvy: <strong>{{ Counter.Days }}</strong>
-    </li>
-    {% endif %}
-    {% if Counter.Supporters > 5000 %}
-    <li>
-        Kolko ludi uz poslalo vyzvu: <strong>{{ Counter.Supporters }}</strong>
-    </li>
-    {% endif %}
-    <li>
-        Na koľko otázok minister Lajčák odpovedal: <strong>{{ Counter.Answers }}</strong>
-    </li>
-</ul>
+        {#<ul>#}
+            {#{% if Counter.Days > 0 %}#}
+                {#<li>#}
+                    {#Kolko dni do deadlinu vyzvy: <strong>{{ Counter.Days }}</strong>#}
+                {#</li>#}
+            {#{% endif %}#}
+            {#{% if Counter.Supporters > 5000 %}#}
+                {#<li>#}
+                    {#Kolko ludi uz poslalo vyzvu: <strong>{{ Counter.Supporters }}</strong>#}
+                {#</li>#}
+            {#{% endif %}#}
+            {#<li>#}
+                {#Na koľko otázok minister Lajčák odpovedal: <strong>{{ Counter.Answers }}</strong>#}
+            {#</li>#}
+        {#</ul>#}
+    {#</div>#}
+{#</div>#}
