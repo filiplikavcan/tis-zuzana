@@ -3607,6 +3607,170 @@ h2 {
 .panel.gray {
   background-color: #EAF3F6; }
 
+.text-column {
+  width: 100%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  padding-top: 1.25rem;
+  margin-bottom: 1.875rem;
+  text-align: center; }
+  @media screen and (min-width: 40em) {
+    .text-column {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  .text-column:last-child:not(:first-child) {
+    float: right; }
+  .text-column.no-margin {
+    margin-bottom: 0 !important; }
+  @media screen and (min-width: 40em) {
+    .text-column {
+      width: 66.66667%;
+      margin-left: auto;
+      margin-right: auto; }
+      .text-column, .text-column:last-child:not(:first-child) {
+        float: none;
+        clear: both; } }
+  @media screen and (min-width: 64em) {
+    .text-column {
+      width: 50%; } }
+
+.support-form {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .support-form::before, .support-form::after {
+    content: ' ';
+    display: table; }
+  .support-form::after {
+    clear: both; }
+  .support-form .check-field,
+  .support-form .email-field,
+  .support-form .form-actions,
+  .support-form .select-field,
+  .support-form .text-field,
+  .support-form .form-actions {
+    width: 100%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem; }
+    @media screen and (min-width: 40em) {
+      .support-form .check-field,
+      .support-form .email-field,
+      .support-form .form-actions,
+      .support-form .select-field,
+      .support-form .text-field,
+      .support-form .form-actions {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    .support-form .check-field:last-child:not(:first-child),
+    .support-form .email-field:last-child:not(:first-child),
+    .support-form .form-actions:last-child:not(:first-child),
+    .support-form .select-field:last-child:not(:first-child),
+    .support-form .text-field:last-child:not(:first-child),
+    .support-form .form-actions:last-child:not(:first-child) {
+      float: right; }
+  .support-form .form-actions {
+    padding-top: 0.75rem;
+    text-align: center; }
+  .support-form label {
+    padding: 0.25rem 0 0;
+    font-weight: 700; }
+  .support-form input,
+  .support-form select {
+    margin-bottom: 0.75rem;
+    border-width: 0.125rem;
+    box-shadow: none;
+    transition-property: border-color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out; }
+    .support-form input:focus,
+    .support-form select:focus {
+      border-width: 0.125rem;
+      border-color: #39A1CF;
+      box-shadow: none; }
+  .support-form .check-field input {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0); }
+  .support-form .check-field label {
+    position: relative;
+    margin-left: 0;
+    padding: 0 0 0 1.875rem;
+    line-height: 1.25rem; }
+    .support-form .check-field label:after, .support-form .check-field label:before {
+      content: "";
+      position: absolute;
+      top: 0.125rem;
+      left: 0;
+      display: block; }
+    .support-form .check-field label:before {
+      width: 1rem;
+      height: 1rem;
+      border: 0.125rem solid #CACACA;
+      transition-property: border-color;
+      transition-duration: 200ms;
+      transition-timing-function: ease-out; }
+    .support-form .check-field label:after {
+      width: 1rem;
+      height: 1rem;
+      padding: 0.25rem;
+      background-clip: content-box;
+      background-color: rgba(255, 255, 255, 0);
+      transition-property: background-color;
+      transition-duration: 200ms;
+      transition-timing-function: ease-out; }
+  .support-form .check-field input[type=checkbox]:checked ~ label:before {
+    border-color: #39A1CF; }
+  .support-form .check-field input[type=checkbox]:checked ~ label:after {
+    background-color: #39A1CF; }
+  @media screen and (min-width: 40em) {
+    .support-form .check-field,
+    .support-form .email-field,
+    .support-form .form-actions,
+    .support-form .select-field,
+    .support-form .text-field,
+    .support-form .form-actions {
+      width: 58.33333%;
+      margin-left: auto;
+      margin-right: auto; }
+      .support-form .check-field, .support-form .check-field:last-child:not(:first-child),
+      .support-form .email-field,
+      .support-form .email-field:last-child:not(:first-child),
+      .support-form .form-actions,
+      .support-form .form-actions:last-child:not(:first-child),
+      .support-form .select-field,
+      .support-form .select-field:last-child:not(:first-child),
+      .support-form .text-field,
+      .support-form .text-field:last-child:not(:first-child),
+      .support-form .form-actions,
+      .support-form .form-actions:last-child:not(:first-child) {
+        float: none;
+        clear: both; }
+    .support-form .form-actions {
+      padding-top: 1.5rem; } }
+  @media screen and (min-width: 64em) {
+    .support-form {
+      max-width: 43.75rem; }
+      .support-form .check-field,
+      .support-form .form-actions,
+      .support-form .select-field,
+      .support-form .text-field,
+      .support-form .form-actions {
+        width: 50%;
+        position: static;
+        margin-left: 0;
+        margin-right: 0;
+        float: left;
+        clear: none; }
+      .support-form .email-field {
+        width: 100%; }
+      .support-form .form-actions {
+        width: 100%;
+        padding-top: 1.5rem; } }
+
 .hero-area {
   height: 100%;
   background-image: url("../assets/hero-image.jpg");
@@ -3910,32 +4074,6 @@ h2 {
   max-width: 31.25rem;
   padding: 0.625rem 0 0.625rem 1.25rem;
   text-align: left; }
-
-.text-column {
-  width: 100%;
-  float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  padding-top: 1.25rem;
-  margin-bottom: 1.875rem;
-  text-align: center; }
-  @media screen and (min-width: 40em) {
-    .text-column {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  .text-column:last-child:not(:first-child) {
-    float: right; }
-  @media screen and (min-width: 40em) {
-    .text-column {
-      width: 66.66667%;
-      margin-left: auto;
-      margin-right: auto; }
-      .text-column, .text-column:last-child:not(:first-child) {
-        float: none;
-        clear: both; } }
-  @media screen and (min-width: 64em) {
-    .text-column {
-      width: 50%; } }
 
 .video-preview {
   position: relative;

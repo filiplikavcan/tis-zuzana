@@ -1,0 +1,116 @@
+.support-form {
+	@include grid-row;
+
+	.check-field,
+	.email-field,
+	.form-actions,
+	.select-field,
+	.text-field,
+  .form-actions {
+		@include grid-column(12);
+	}
+
+	.form-actions {
+		padding-top: calc-rem(12);
+		text-align: center;
+	}
+
+	label {
+		padding: calc-rem(4 0 0);
+		font-weight: 700;
+	}
+
+	input,
+	select {
+		margin-bottom: calc-rem(12);
+		border-width: calc-rem(2);
+		box-shadow: none;
+		@include ps-transition(border-color);
+
+		&:focus {
+			border-width: calc-rem(2);
+			border-color: $blue-shakespeare;
+			box-shadow: none;
+		}
+	}
+
+	.check-field {
+		input {
+			@include element-invisible;
+		}
+
+		label {
+			position: relative;
+			margin-left: 0;
+			padding: calc-rem(0 0 0 30);
+			line-height: calc-rem(20);
+
+			&:after,
+			&:before {
+				content: "";
+				position: absolute;
+				top: calc-rem(2);
+				left: 0;
+				display: block;
+			}
+
+			&:before {
+				width: calc-rem(16);
+				height: calc-rem(16);
+				border: calc-rem(2) solid $gray-silver;
+				@include ps-transition(border-color);
+			}
+
+			&:after {
+				width: calc-rem(16);
+				height: calc-rem(16);
+				padding: calc-rem(4);
+				background-clip: content-box;
+				background-color: $transparent;
+				@include ps-transition(background-color);
+			}
+		}
+
+		input[type=checkbox]:checked ~ label:before {
+			border-color: $blue-shakespeare;
+		}
+
+		input[type=checkbox]:checked ~ label:after {
+			background-color: $blue-shakespeare;
+		}
+	}
+  @include breakpoint(medium){
+    .check-field,
+  	.email-field,
+  	.form-actions,
+  	.select-field,
+  	.text-field,
+    .form-actions {
+      @include grid-col-size(7);
+      @include grid-col-pos(center);
+    }
+    .form-actions {
+  		padding-top: calc-rem(24);
+  	}
+  }
+  @include breakpoint(large){
+    max-width: calc-rem(700);
+    .check-field,
+  	.form-actions,
+  	.select-field,
+  	.text-field,
+    .form-actions {
+    @include grid-col-size(6);
+    @include grid-column-unposition;
+    clear: none;
+    }
+    .email-field {
+      @include grid-col-size(12);
+      // float: left;
+    }
+    .form-actions {
+      @include grid-col-size(12);
+  		padding-top: calc-rem(24);
+  	}
+  }
+}

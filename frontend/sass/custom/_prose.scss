@@ -45,21 +45,6 @@
 	text-align: left;
 }
 
-// Basic text column
-.text-column {
-	@include grid-column(12);
-	padding-top: rem-calc(20);
-	margin-bottom: rem-calc(30);
-	text-align: center;
-	@include breakpoint(medium) {
-		 @include grid-col-size(8);
-		@include grid-col-pos(center);
-	}
-	@include breakpoint(large) {
-		 @include grid-col-size(6);
-	}
-}
-
 // Video link
 .video-preview {
 	position: relative;
