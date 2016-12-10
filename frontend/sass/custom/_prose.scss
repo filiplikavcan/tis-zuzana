@@ -1,18 +1,126 @@
+// Text wrapper and text styles
+
 .prose {
-  margin-top: rem-calc(20);
+	@include grid-row;
+	margin-top: rem-calc(20);
 }
 
-.info-list {
-  @include grid-row;
-  @include grid-layout($n: 1, $selector: "li");
-  list-style: none;
-  li {
+// Points list
+.points-list {
+	@include grid-column(12);
+	@include grid-layout($n: 1, $selector: "li");
+	margin: 0;
+	list-style: none;
+	text-align: center;
 
-  }
-  @include breakpoint(large){
-    @include grid-layout($n: 2, $selector: "li");
-  }
-  @include breakpoint(xlarge){
-    @include grid-layout($n: 3, $selector: "li");
-  }
+	img {
+		max-width: rem-calc(150);
+	}
+
+	h2 {
+		text-align: center;
+		margin-bottom: rem-calc(24);
+	}
+	@include breakpoint(medium) {
+		@include grid-col-size(10);
+		@include grid-col-pos(center);
+		 @include grid-layout($n: 2, $selector: "li");
+
+		h2 {
+			margin-bottom: rem-calc(36);
+		}
+
+		> li {
+			margin-bottom: rem-calc(24);
+		}
+	}
+	@include breakpoint(large) {
+		@include grid-col-size(8);
+	}
+}
+
+.check-list {
+	max-width: rem-calc(500);
+	padding: rem-calc(10 0 10 20);
+	text-align: left;
+}
+
+// Basic text column
+.text-column {
+	@include grid-column(12);
+	padding-top: rem-calc(20);
+	margin-bottom: rem-calc(30);
+	text-align: center;
+	@include breakpoint(medium) {
+		 @include grid-col-size(8);
+		@include grid-col-pos(center);
+	}
+	@include breakpoint(large) {
+		 @include grid-col-size(6);
+	}
+}
+
+// Video link
+.video-preview {
+	position: relative;
+	display: block;
+	max-width: calc-rem(250);
+	height: calc-rem(150);
+	margin: 0 auto;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		width: calc-rem(50);
+		height: calc-rem(50);
+		border: calc-rem(2) solid currentColor;
+		color: $white;
+		border-radius: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	}
+	&:after {
+		width: 0;
+		height: 0;
+		border-radius: 0;
+		border-style: solid;
+		border-width: calc-rem(10px 0 10px 17.3px);
+		border-color: transparent transparent transparent currentColor;
+		transform: translateX(-40%) translateY(-50%);
+	}
+	@include breakpoint(medium){
+		max-width: calc-rem(500);
+		height: calc-rem(260);
+	}
+	@include breakpoint(large){
+		max-width: calc-rem(500);
+		height: calc-rem(280);
+	}
+}
+
+.questions-list {
+	@include reset-ul(true);
+	li {
+		@include grid-column(12);
+	}
+	strong {
+		font-size: calc-rem(18);
+		font-style: italic;
+		font-weight: 500;
+	}
+
+	@include breakpoint(medium){
+		li {
+		@include grid-col-size(6);
+		}
+	}
+	@include breakpoint(medium){
+		max-width: calc-rem(900);
+		margin: 0 auto;
+	}
 }

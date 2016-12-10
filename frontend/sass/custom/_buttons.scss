@@ -1,0 +1,13 @@
+.button {
+  border: calc-rem(2) solid currentColor;
+  font-weight: 700;
+  @include ps-transition(border-color, color, background-color);
+  @include link-states{
+    color: $white;
+    background-color: $blue-shakespeare;
+    border-color: $blue-shakespeare;
+  }
+  &:focus{
+    border-color: darken($blue-shakespeare, 20%);
+  }
+}

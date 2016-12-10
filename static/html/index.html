@@ -4,55 +4,105 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/static/css/styles.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,500i,700" rel="stylesheet">
+  <link rel="stylesheet" href="../css/lity.min.css">
+  <link rel="stylesheet" href="../css/styles.min.css">
   <title>TIS Zuzana</title>
 </head>
 
 <body>
   <header class="hero-area">
     <div class="topbar">
-      <a href="#" class="menu-toggle js-open-menu">MENU</a>
-      <nav class="menu-main">
+      <div class="logo">
+        <a target="_blank" href="http://transparency.sk">
+          <img src="../assets/transparency-logo.svg" alt="Logo Transparency International">
+        </a>
+      </div>
+      <div class="actions">
+        <a href="#" class="menu-toggle js-open-menu">MENU</a>
+      </div>
+      <div class="nav-wrapper">
         <a href="#" class="close-menu js-close-menu">CLOSE</a>
-        <ul>
-          <li><a href="#">Opdpovedzte Zuzane</a></li>
-          <li><a href="#">Nase otazky</a></li>
-          <li><a href="#">Signatari vyzvy</a></li>
-          <li><a href="#">V mediach</a></li>
+        <nav class="menu-main">
+          <ul>
+            <li><a href="#"><span>Odpovedzte Zuzane</span></a></li>
+            <li><a href="#"><span>Nase otazky</span></a></li>
+            <li><a href="#"><span>Signatari vyzvy</span></a></li>
+            <li><a href="#"><span>V mediach</span></a></li>
+          </ul>
+        </nav>
+        <ul class="lang-switch">
+          <li><a class="active" href="#"><span>sk</span></a></li>
+          <li><a href="#"><span>en</span></a></li>
         </ul>
-      </nav>
+      </div>
     </div>
     <div class="hero-content">
       <div class="content-column">
         <h1>Podporujem Zuzanu</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nam reiciendis eos facere suscipit numquam laboriosam voluptates, cumque dolorem!</p>
-        <a class="button" href="#">ACTION</a>
+        <a class="button" href="#">Zisti viac!</a>
       </div>
     </div>
   </header>
   <main>
     <div class="prose">
-      <ul class="info-list">
+      <div class="text-column">
+        <h2>O čo ide?</h2>
+        <p>Umelé navyšovanie zákaziek, fingovaná súťaž, utajovanie informácií. Minister zahraničných vecí Miroslav Lajčák dodnes neodpovedal na otázky Zuzany Hlávkovej o reprezentačných aktivitách slovenského predsedníctva v Rade EÚ. Namiesto vecných odpovedí minister Zuzanu osočuje, zahmlieva a lavíruje. Ide ministrovi Lajčákovi naozaj o dobré meno Slovenska?</p>
+      </div>
+      <ul class="points-list">
         <li>
-          <img src="http://placehold.it/200" alt="">
-          <h2>Headline</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi provident, accusantium, corporis expedita, mollitia nostrum praesentium, illo numquam libero animi iusto similique distinctio maiores veritatis rerum ea qui perspiciatis soluta.</p>
+          <h3>Aké boli sľuby?</h3>
+          <ul class="check-list">
+            <li>Vyber slubov?</li>
+            <li>Lorem ipsum dolor sit amet ipsum dolor sit amet</li>
+            <li>Lorem ipsum dolor</li>
+            <li>...</li>
+          </ul>
+          <a class="button" href="http://www.pluska.sk/spravy/z-domova/slovensko-bude-predsedat-rade-eu-opasok-chce-poriadne-utiahnut.html">Vsetky sluby</a>
         </li>
         <li>
-          <img src="http://placehold.it/200" alt="">
-          <h2>Headline</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ratione eius eos porro quae id temporibus sit repellat ex, doloribus fugiat dolorum obcaecati ipsa voluptatum impedit sunt possimus ipsum tenetur.</p>
-        </li>
-        <li>
-          <img src="http://placehold.it/200" alt="">
-          <h2>Headline</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe cupiditate consequatur harum dicta labore iure distinctio quam aliquid officiis! Minima quaerat possimus dolor pariatur quis expedita, in cum blanditiis, fugit!</p>
+          <h3>Čo sa stalo Zuzane </h3>
+          <p>Vsetko podrobne popisuje ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores aliquam obcaecati sint ratione unde, ipsa, dolorem iste perspiciatis, sed facere tenetur natus.</p>
+          <a class="button" href="http://transparency.blog.sme.sk/c/439404/ako-som-kvoli-pochybnym-zakazkam-odisla-z-ministerstva-zahranicnych-veci.htm">Cely pribeh</a>
         </li>
       </ul>
+      <div class="text-column">
+        <h2>Aka bola reakcia?</h2>
+        <p>Pozrite si reakciu ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ad, doloribus soluta magni veniam, explicabo voluptatem eligendi, ratione beatae totam porro. Veritatis vel cupiditate quia, voluptatibus beatae. Repellendus, repellat aspernatur!</p>
+        <a class="video-preview" href="https://www.youtube.com/watch?v=XSGBVzeBUbk" data-lity style="background-image: url('https://placehold.it/900x600/39A1CF/FFFFFF/&text=Video+Preview');">
+          <span class="visually-hidden">Minstrova reakcia</span>
+        </a>
+      </div>
     </div>
-    <div class="timeline"></div>
+    <div class="panel gray">
+      <div class="prose">
+        <div class="text-column">
+          <h2>Tretia šanca pre Lajčáka</h2>
+          <p>Preto vyzývame ministra, ak skutočne nemá čo skrývať, aby si splnil svoju morálnu povinnosť a odpovedal konečne na Zuzanine otázky. Žiadame jednoznačné, presné a verejné odpovede.</p>
+        </div>
+        <ul class="questions-list">
+          <li>
+            <p><strong>Ako prebiehalo zabezpečovanie reprezentačných aktivít predsedníctva, čo sa malo podľa zmlúv vykonať, a aká bola skutočnosť?</strong></p>
+            <p>Žiadame zverejniť celú dokumentáciu k zákazkám na predstavenie loga, ako aj na otvárací koncert (zápisnice z výberu dodávateľov, ponuky uchádzačov v prieskume trhu, všetky zmluvy a faktúry týkajúce sa oboch podujatí). Žiadame prešetriť, či Agentúra Evka skutočne vykonala všetky práce uvedené v zmluve, a to prostredníctvom zverejnenia všetkých jej zmlúv a faktúr týkajúcich sa podujatí na prezentáciu predsedníctva.</p>
+          </li>
+          <li>
+            <p><strong>Kto stál za kľúčovými rozhodnutiami?</strong></p>
+            <p>Žiadame poskytnúť verejnosti a médiám mená a funkcie ľudí, ktorí mali zodpovednosť za rozhodnutia pri príprave dotknutých aktivít predsedníctva.</p>
+          </li>
+          <li>
+            <p><strong>Aké budú dôsledky pre zodpovedné osoby?</strong></p>
+            <p>Žiadame vyvodiť osobnú zodpovednosť za porušenie zákonov o: prístupe k informáciám, o verejnom obstarávaní a o ochrane ohlasovateľov protispoločenskej činnosti.</p>
+          </li>
+        </ul>
+        <div class="text-column">
+          <p>Ak si takisto myslíte, že minister by mal odpovedať Zuzane na otázky, ktorých odpovede zaujímajú aj Vás a zvyšok Slovenska, pridajte sa k tejto výzve!</p>
+        </div>
+      </div>
+    </div>
   </main>
   <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type='text/javascript' src="/static/js/scripts.min.js"></script>
+  <script type='text/javascript' src="../js/scripts.min.js"></script>
 </body>
 </html>
