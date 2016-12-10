@@ -7,4 +7,8 @@ jQuery( document ).ready(function( $ ) {
     event.preventDefault();
     $(this).parent().removeClass('is-opened');
   });
+  $('.support-form').on('click', '[type="submit"]', function(event){
+    event.preventDefault();
+    $(this).closest('.support-form').addClass('is-closed');
+  })
 });

@@ -1,0 +1,48 @@
+.after-form {
+  @include grid-row;
+	max-height: 0;
+  width: 100%;
+	overflow: hidden;
+	@include ps-transition(max-height);
+
+	p a {
+    display: inline-block;
+    padding: calc-rem(0 2);
+		text-decoration: underline;
+		@include ps-transition(color, background-color);
+		@include link-states {
+			background-color: $blue-burst;
+			color: $white;
+			text-decoration: none;
+		}
+	}
+
+	.mail-content {
+    position: relative;
+		max-width: calc-rem(520);
+		margin: 0 auto;
+		text-align: left;
+		font-weight: 300;
+		font-style: italic;
+    &:before,
+    &:after {
+      content: "\"";
+      display: block;
+      position: absolute;
+      font-size: calc-rem(120);
+      line-height: 1;
+      font-weight: 700;
+      color: rgba($blue-burst, 0.2);
+    }
+    &:before {
+      top: 0;
+      left: 0;
+      transform: translateX(-75%) translateY(-15%);
+    }
+    &:after {
+      bottom: 0;
+      left: 0;
+      transform: translateX(90%) translateY(70%);
+    }
+	}
+}

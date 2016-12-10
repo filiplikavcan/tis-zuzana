@@ -4,10 +4,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,500i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,500i,700" rel="stylesheet">
   <link rel="stylesheet" href="../css/lity.min.css">
   <link rel="stylesheet" href="../css/styles.min.css">
   <title>TIS Zuzana</title>
+    <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+	<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Your Website Title" />
+	<meta property="og:description"   content="Your description" />
+	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 </head>
 
 <body>
@@ -105,41 +112,59 @@
       <div class="text-column no-margin">
         <h2>Podpor Zuzanu aj Ty!</h2>
       </div>
-      <div class="form-wrapper">
-        <form class="support-form">
-          <div class="text-field">
-            <label for="name">Meno</label>
-            <input type="text" name="name" id="name" placeholder="name">
+      <form class="support-form">
+        <div class="text-field">
+          <label for="name">Meno</label>
+          <input type="text" name="name" id="name" placeholder="name">
+        </div>
+        <div class="text-field">
+          <label for="surname">Priezvisko</label>
+          <input type="text" name="surname" id="surname" placeholder="surname">
+        </div>
+        <div class="email-field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="email" required>
+        </div>
+        <div class="select-field">
+          <label for="country">Krajina</label>
+          <select name="cars">
+            <option value="slovakia" selected>Slovakia</option>
+            <option value="cesko">Cesko</option>
+            <option value="francuzsko">francuzsko</option>
+            <option value="nemecko">Nemecko</option>
+          </select>
+        </div>
+        <div class="text-field">
+          <label for="city">Mesto</label>
+          <input type="text" name="city" id="city" placeholder="city">
+        </div>
+        <fieldset class="check-field">
+          <input id="checkbox1" type="checkbox">
+          <label for="checkbox1">Nechcem, aby boli moje údaje zverejnené</label>
+        </fieldset>
+        <div class="form-actions">
+          <input class="button" type="submit" value="Chcem, aby minister odpovedal Zuzane">
+        </div>
+      </form>
+      <div class="after-form">
+        <div class="text-column">
+          <h3>Dakujeme za podporu</h3>
+          <p>Zazdielaj tuto vyzvy svojom kamaratom</p>
+          <a class="button" target="_blank" href="https://www.facebook.com/share.php?u=www.slovensko.digital">Zazdielaj na Facebooku</a>
+          <p>alebo posli mail priamo ministrovi na tento <a href="mailto:mail@mail.com">mail (mail@mail.com)</a></p>
+          <div class="mail-content">
+            <p>Vážený pán minister</p>
+            <p>so znepokojením sledujem pokračujúce utajovanie informácií o tom, ako ministerstvo zahraničných vecí použilo verejné prostriedky na kultúrne akcie slovenského predsedníctva. Nerozumiem, prečo napriek Vašim uisteniam doteraz nie ste ochotní predložiť všetky fakty na stôl. Prvýkrát ste skutočné náklady zatajili médiám vo februári. Druhýkrát ste odmietli poskytnúť informácie Transparency International v lete tohto roku. Ako občan tejto krajiny Vás žiadam do tretice, aby ste sa odpovedali na otázky, ktoré vyvoláva svedectvo Zuzany Hávkovej:</p>
+            <p><strong>1. Ako prebiehalo zabezpečovanie reprezentačných aktivít predsedníctva, čo sa malo podľa zmlúv vykonať, a aká bola skutočnosť?</strong></p>
+            <p>Žiadame zverejniť celú dokumentáciu k zákazkám na predstavenie loga, ako aj na otvárací koncert (zápisnice z výberu dodávateľov, ponuky uchádzačov v prieskume trhu, všetky zmluvy a faktúry týkajúce sa oboch podujatí). Žiadame prešetriť, či Agentúra Evka skutočne vykonala všetky práce uvedené v zmluve, a to prostredníctvom zverejnenia všetkých jej zmlúv a faktúr týkajúcich sa podujatí na prezentáciu predsedníctva.</p>
+            <p><strong>2. Kto stál za kľúčovými rozhodnutiami?</strong></p>
+            <p>Žiadame poskytnúť verejnosti a médiám mená a funkcie ľudí, ktorí mali zodpovednosť za rozhodnutia pri príprave dotknutých aktivít predsedníctva.</p>
+            <p><strong>3. Aké budú dôsledky pre zodpovedné osoby?</strong></p>
+            <p>Žiadame vyvodiť osobnú zodpovednosť za porušenie zákonov o: prístupe k informáciám, o verejnom obstarávaní a o ochrane ohlasovateľov protispoločenskej činnosti.</p>
+            <p>S úctou</p>
+            <p>[Vase Meno]</p>
           </div>
-          <div class="text-field">
-            <label for="surname">Priezvisko</label>
-            <input type="text" name="surname" id="surname" placeholder="surname">
-          </div>
-          <div class="email-field">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="email" required>
-          </div>
-          <div class="select-field">
-            <label for="country">Krajina</label>
-            <select name="cars">
-              <option value="slovakia" selected>Slovakia</option>
-              <option value="cesko">Cesko</option>
-              <option value="francuzsko">francuzsko</option>
-              <option value="nemecko">Nemecko</option>
-            </select>
-          </div>
-          <div class="text-field">
-            <label for="city">Mesto</label>
-            <input type="text" name="city" id="city" placeholder="city">
-          </div>
-          <fieldset class="check-field">
-            <input id="checkbox1" type="checkbox">
-            <label for="checkbox1">Nechcem, aby boli moje údaje zverejnené</label>
-          </fieldset>
-          <div class="form-actions">
-            <input class="button" type="submit" value="Chcem, aby minister odpovedal Zuzane">
-          </div>
-        </form>
+        </div>
       </div>
     </div>
     <div class="panel gray">
@@ -178,6 +203,7 @@
       </div>
     </div>
   </footer>
+  <!-- Load Facebook SDK for JavaScript -->
   <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type='text/javascript' src="../js/scripts.min.js"></script>
 </body>
