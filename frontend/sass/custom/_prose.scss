@@ -109,3 +109,32 @@
 		margin: 0 auto;
 	}
 }
+
+.next-list {
+	@include reset-ul();
+	max-width: calc-rem(500);
+	margin: calc-rem(12) auto;
+	text-align: left;
+	counter-reset: li-counter;
+	li {
+		position: relative;
+		padding-left: calc-rem(30);
+		&:before{
+			counter-increment: li-counter;
+			content: counter(li-counter) ".";
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: calc-rem(3);
+			font-size: calc-rem(24);
+			line-height: 1;
+			font-weight: 700;
+		}
+	}
+	p:first-child{
+		margin-bottom: 0;
+	}
+	strong {
+		font-size: calc-rem(20);
+	}
+}

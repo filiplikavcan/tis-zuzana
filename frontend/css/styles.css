@@ -3591,6 +3591,40 @@ h2 {
   h2 {
     margin-top: 0.75rem; } }
 
+@media screen and (min-width: 64em) {
+  h2 {
+    margin-bottom: 1.5rem; } }
+
+@font-face {
+  font-family: 'icon-font';
+  src: url("../assets/fonts/icon-font.eot?x66lhn");
+  src: url("../assets/fonts/icon-font.eot?x66lhn#iefix") format("embedded-opentype"), url("../assets/fonts/icon-font.ttf?x66lhn") format("truetype"), url("../assets/fonts/icon-font.woff?x66lhn") format("woff"), url("../assets/fonts/icon-font.svg?x66lhn#icon-font") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */ }
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: 'icon-font' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+
+.icon-envelope:before {
+  content: ""; }
+
+.icon-facebook:before {
+  content: ""; }
+
+.icon-twitter:before {
+  content: ""; }
+
 .button {
   border: 0.125rem solid currentColor;
   font-weight: 700;
@@ -4145,3 +4179,80 @@ h2 {
     .questions-list {
       max-width: 56.25rem;
       margin: 0 auto; } }
+
+.next-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 31.25rem;
+  margin: 0.75rem auto;
+  text-align: left;
+  counter-reset: li-counter; }
+  .next-list li {
+    position: relative;
+    padding-left: 1.875rem; }
+    .next-list li:before {
+      counter-increment: li-counter;
+      content: counter(li-counter) ".";
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0.1875rem;
+      font-size: 1.5rem;
+      line-height: 1;
+      font-weight: 700; }
+  .next-list p:first-child {
+    margin-bottom: 0; }
+  .next-list strong {
+    font-size: 1.25rem; }
+
+footer {
+  padding: 0.75rem 0;
+  background-color: #1D2B49;
+  color: #fefefe; }
+  footer .social-col,
+  footer .contact-col {
+    width: 100%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    text-align: center; }
+    @media screen and (min-width: 40em) {
+      footer .social-col,
+      footer .contact-col {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    footer .social-col:last-child:not(:first-child),
+    footer .contact-col:last-child:not(:first-child) {
+      float: right; }
+  footer .contact-col {
+    padding-top: 0.75rem; }
+    footer .contact-col p {
+      font-size: 0.875rem; }
+  footer a {
+    color: currentColor; }
+  footer .social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    footer .social-list > li {
+      display: inline-block; }
+    footer .social-list a {
+      display: block;
+      padding: 0.375rem; }
+      footer .social-list a:before {
+        display: block;
+        padding: 0.5rem;
+        border: 0.125rem solid #fefefe;
+        border-radius: 50%;
+        font-size: 0.75rem;
+        line-height: 1;
+        transition-property: background-color, color;
+        transition-duration: 200ms;
+        transition-timing-function: ease-out; }
+      footer .social-list a:active:before, footer .social-list a:focus:before, footer .social-list a:hover:before {
+        background-color: #fefefe;
+        color: #1D2B49; }
+  @media screen and (min-width: 40em) {
+    footer {
+      padding-top: 1.5rem; } }

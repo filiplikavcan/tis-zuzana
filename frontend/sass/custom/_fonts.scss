@@ -7,3 +7,9 @@ h2 {
     margin-top: rem-calc(12);
   }
 }
+
+@include breakpoint(large) {
+  h2 {
+    margin-bottom: rem-calc(24);
+  }
+}
