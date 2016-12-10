@@ -18,27 +18,31 @@
 {% block content %}
     {% include 'components/Counter.twig' with { Counter: c.Counter } %}
 
-    <section>
-        <h2>
-            {{ c.About.Title }}
-        </h2>
+    {% if not c.SupporterForm.IsSubmitted %}
+        <section>
+            <h2>
+                {{ c.About.Title }}
+            </h2>
 
-        {{ c.About.Content|shortcodes }}
-    </section>
+            {{ c.About.Content|shortcodes }}
+        </section>
 
-    <section>
-        <h2>
-            {{ c.Support.Title }}
-        </h2>
+        <section>
+            <h2>
+                {{ c.Questions.Title }}
+            </h2>
 
-        {% for Question in c.Support.Questions %}
-            <h3>
-                {{ Question.Title }}
-            </h3>
+            {{ c.Questions.Content|shortcodes }}
 
-            {{ Question.Content|shortcodes }}
-        {% endfor %}
-    </section>
+            {% for Question in c.Questions.Questions %}
+                <h4>
+                    {{ loop.index }}. {{ Question.Title }}
+                </h4>
+
+                {{ Question.Content|shortcodes }}
+            {% endfor %}
+        </section>
+    {% endif %}
 
     {% include 'components/SupportForm.twig' with { Form: c.SupporterForm } %}
 {% endblock %}

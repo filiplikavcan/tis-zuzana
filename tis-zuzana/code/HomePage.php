@@ -5,7 +5,11 @@ class HomePage extends Page
     private static $db = array(
         'QuestionAnsweredCount' => 'Int',
         'AboutTitle' => 'Varchar(1000)',
+        'QuestionsTitle' => 'Varchar(1000)',
+        'QuestionsContent' => 'HTMLText',
         'SupportTitle' => 'Varchar(1000)',
+        'SupportContent' => 'HTMLText',
+        'EmailTemplate' => 'Text',
     );
 
     private static $has_many = array(
@@ -18,7 +22,11 @@ class HomePage extends Page
 
         $fields->addFieldToTab('Root.Main', new NumericField('QuestionAnsweredCount', 'Počet zodpovedaných otázok'), 'Content');
         $fields->addFieldToTab('Root.Main', new TextField('AboutTitle', 'Nadpis sekcie s popisom kauzy'), 'Content');
-        $fields->addFieldToTab('Root.Main', new TextField('SupportTitle', 'Nadpis sekcie s požiadavkami'));
+        $fields->addFieldToTab('Root.Otázky', new TextField('QuestionsTitle', 'Nadpis sekcie s otázkami'));
+        $fields->addFieldToTab('Root.Otázky', new HtmlEditorField('QuestionsContent', 'Obsah sekcie s otázkami'));
+        $fields->addFieldToTab('Root.Formulár', new TextField('SupportTitle', 'Nadpis sekcie s formulárom'));
+        $fields->addFieldToTab('Root.Formulár', new HtmlEditorField('SupportContent', 'Obsah sekcie s formulárom'));
+        $fields->addFieldToTab('Root.Email', new TextareaField('EmailTemplate', 'Šablóna emailu'));
 
         $field = new GridField('Questions', 'Questions', $this->owner->Questions(), $this->getGridFieldConfig());
         $fields->addFieldToTab('Root.Otázky', $field);
@@ -40,7 +48,7 @@ class HomePage_Controller extends Page_Controller
 
     public function getQuestions()
     {
-        return $this->Questions();
+        return $this->Questions()->Sort('Sort');
     }
 
     public function getCounter()

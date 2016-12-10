@@ -1,17 +1,33 @@
 {% set FormFields = Form.Fields|map('Name') %}
 
-{% if Form.Errors %}
-    <div class="form-error">
-        {{ f.errors(Form) }}
-    </div>
-{% endif %}
+<section>
+    <h2>
+        {{ Form.Title }}
+    </h2>
 
-{{ f.begin(Form, FormFields, { class: "form-horizontal" }) }}
-    {{ f.label(FormFields.Email) }}
-    {{ f.input(FormFields.Email) }}
-    {{ f.label(FormFields.FirstName) }}
-    {{ f.input(FormFields.FirstName) }}
-    {{ f.label(FormFields.LastName) }}
-    {{ f.input(FormFields.LastName) }}
-    {{ f.input(FormFields._submit) }}
-{{ f.end() }}
+    {{ Form.Content|shortcodes }}
+
+    {% if Form.IsSubmitted and Form.IsValid %}
+        Dakujeme. {% if Form.WasStored %}as {% endif %}
+    {% else %}
+        {% if Form.Errors %}
+            <div class="form-error">
+                {{ f.errors(Form) }}
+            </div>
+        {% endif %}
+
+        {{ f.begin(Form, FormFields, { class: "form-horizontal" }) }}
+            {{ f.label(FormFields.Email) }}
+            {{ f.input(FormFields.Email) }}
+            {{ f.label(FormFields.FirstName) }}
+            {{ f.input(FormFields.FirstName) }}
+            {{ f.label(FormFields.LastName) }}
+            {{ f.input(FormFields.LastName) }}
+            {{ f.label(FormFields.City) }}
+            {{ f.input(FormFields.City) }}
+            {{ f.input(FormFields.Hide) }}
+            {{ f.label(FormFields.Hide) }}
+            {{ f.input(FormFields._submit) }}
+        {{ f.end() }}
+    {% endif %}
+</section>

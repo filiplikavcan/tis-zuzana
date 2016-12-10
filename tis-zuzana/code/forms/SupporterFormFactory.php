@@ -4,15 +4,16 @@ class SupporterFormFactory extends BaseFormFactory
 {
     public function create() {
         $form = parent::create();
-        //$form->enableReCaptcha();
 
         $form->addText('Email', 'Email*')
             ->addRule(Application\Form::EMAIL, 'A valid emaill address is required.')
             ->setRequired(true);
-        $form->addText('FirstName', 'First Name*');
-        $form->addText('LastName', 'Last Name*');
+        $form->addText('FirstName', 'First Name');
+        $form->addText('LastName', 'Last Name');
+        $form->addText('City', 'City');
+        $form->addCheckbox('Hide', 'Nechcem, aby bolo moje meno zverejnené');
 
-        $submit = $form->addSubmit('submit', 'Send')->setAttribute('class', 'btn');
+        $submit = $form->addSubmit('submit', 'Chcem, aby minister odpovedal Zuzane');
 
         $submit->onClick[] = array($this, 'onSubmit');
 
@@ -25,19 +26,27 @@ class SupporterFormFactory extends BaseFormFactory
          * @var $form \Application\Form
          */
         $form = $button->getForm();        
-        
+
         if ($form->isValid())
         {
-            $data = $form->getValues();
+            if (!$form->isStored())
+            {
+                $data = $form->getValues();
 
-            $form_data = new ContactFormData();
+                $supporter = new Supporter();
 
-            $form_data->loadFromForm($data);
+                $supporter->Email = $data->Email;
+                $supporter->FirstName = $data->FirstName;
+                $supporter->LastName = $data->LastName;
+                $supporter->City = $data->City;
+                $supporter->Hide = $data->Hide;
 
-            $form_data->SourceName = $form->getSourceName();
-            $form_data->NotificationEmailAddress = $this->site_config->NotificationEmailAddress;
+                $supporter->write();
 
-            $form_data->write();
+                $supporter->confirm();
+
+                $form->markAsStored();
+            }
         }
         else
         {

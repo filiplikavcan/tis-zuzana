@@ -4,7 +4,7 @@ class Question extends DataObject
 {
     private static $db = array(
         'Title' => 'Varchar(1000)',
-        'Content' => 'Text',
+        'Content' => 'HTMLText',
         'IsAnswered' => 'Boolean',
         'Sort' => 'Int',
     );
