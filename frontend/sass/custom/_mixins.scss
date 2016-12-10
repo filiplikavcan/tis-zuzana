@@ -1,0 +1,32 @@
+@function calc-rem($value) {
+  @return rem-calc($value);
+}
+
+$ps-transition-duration: 200ms !default;
+
+@mixin ps-transition($property...) {
+  transition-property: $property;
+  transition-duration: $ps-transition-duration;
+  transition-timing-function: ease-out;
+}
+
+
+@mixin link-states {
+  &:active,
+  &:focus,
+  &:hover {
+    @content;
+  }
+}
+
+@mixin reset-ul($inline: false) {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @if $inline {
+    > li {
+      display: inline-block;
+    }
+  }
+}

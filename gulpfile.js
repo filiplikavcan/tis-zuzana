@@ -7,11 +7,10 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
-// const postcss = require('gulp-postcss');
 const autoprefixer = require('gulp-autoprefixer');
 // const cssnano = require('cssnano');
 // const rename = require('gulp-rename')
-// const runSequence = require('run-sequence');
+const runSequence = require('run-sequence');
 const minifyCss = require('gulp-minify-css');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
@@ -29,10 +28,10 @@ gulp.task('sass', function() {
         browsers: 'last 5 versions',
         cascade: false
     }))
-    .pipe(gulp.dest('./static/css'))
+    .pipe(gulp.dest('./frontend/css'))
     .pipe(rename({ extname: '.min.css' }))
     .pipe(minifyCss({ keepSpecialComments: 1, keepBreaks: false, aggressiveMerging: false }))
-    .pipe(gulp.dest('./static/css'));
+    .pipe(gulp.dest('./frontend/css'));
 });
 
 // *******************************
@@ -59,6 +58,13 @@ gulp.task('assets', function() {
         .pipe(gulp.dest('./static/assets'));
 });
 
+gulp.task('css', function() {
+    del(['./static/css/**']);
+
+    return gulp.src('frontend/css/**/*.*')
+        .pipe(gulp.dest('./static/css'));
+});
+
 // *******************************
 // *         WATCH TASKS         *
 // *******************************
@@ -68,21 +74,28 @@ const sassFiles = [
 ];
 
 const jsFiles = [
-  './frontend/js/**/*.scss'
+  './frontend/js/**/*.js'
 ];
 
 const assetsFiles = [
   './frontend/assets/**/*.*'
 ];
 
+const cssFiles = [
+  './frontend/css/**/*.*'
+];
+
 gulp.task('watch', function() {
   gulp.watch(sassFiles, ['sass']);
   gulp.watch(jsFiles, ['js']);
   gulp.watch(assetsFiles, ['assets']);
+  gulp.watch(cssFiles, ['css']);
 });
 
 // *******************************
 // *         MAIN TASKS          *
 // *******************************
 
-gulp.task('default', ['sass', 'js', 'assets', 'watch']);
+gulp.task('default', function(){
+    runSequence(['sass', 'js', 'assets'], 'css', 'watch');
+  });

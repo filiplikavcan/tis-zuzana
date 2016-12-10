@@ -1,0 +1,9 @@
+h2 {
+  margin-top: rem-calc(6);
+}
+
+@include breakpoint(medium) {
+  h2 {
+    margin-top: rem-calc(12);
+  }
+}
