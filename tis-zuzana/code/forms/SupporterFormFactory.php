@@ -11,7 +11,9 @@ class SupporterFormFactory extends BaseFormFactory
         $form->addText('FirstName', 'Meno');
         $form->addText('LastName', 'Priezvisko');
         $form->addText('City', 'Mesto');
-        $form->addCheckbox('Hide', 'Nechcem, aby bolo moje meno zverejnené');
+        $form->addText('Country', 'Krajina');
+        $form->addCheckbox('Show', 'Súhlasím, so zverejnením mena v zozname signatárov')
+            ->setDefaultValue(true);
 
         $submit = $form->addSubmit('submit', 'Odoslať');
 
@@ -39,11 +41,12 @@ class SupporterFormFactory extends BaseFormFactory
                 $supporter->FirstName = $data->FirstName;
                 $supporter->LastName = $data->LastName;
                 $supporter->City = $data->City;
-                $supporter->Hide = $data->Hide;
+                $supporter->Country = $data->Country;
+                $supporter->Show = $data->Show;
 
                 $supporter->write();
 
-                //$supporter->confirm();
+                $supporter->sendConfirmationEmail();
 
                 $form->markAsStored();
             }

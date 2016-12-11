@@ -1,0 +1,19 @@
+<div class="panel">
+    <div class="after-form">
+        <div class="text-column">
+            {% if c.EmailConfirmation.IsSuccess %}
+                <h1>Email bol overený</h1>
+                <div class="lead">
+                   Ďakujeme, Vaša emailová adresa bola úspešne overená.
+                </div>
+            {% else %}
+                <div class="errors">
+                    <h1>Ups, niečo zlyhalo</h1>
+                    <div class="lead">
+                        Vašu emailovú adresu nebolo možné overiť.
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -2,39 +2,47 @@
 {% import 'macros/form.twig' as f %}
 
 {% block header %}
-    {% if not c.SupporterForm.IsSubmitted %}
-        <header class="hero-area">
-            <div class="hero-content">
-                <div class="content-column">
-                    <h1>Odpovedzte Zuzane!</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nam reiciendis eos facere suscipit numquam laboriosam voluptates, cumque dolorem!</p>
-                    <a class="button" href="#">Zisti viac!</a>
+    {% if not c.EmailConfirmation.IsInvoked %}
+        {% if not c.SupporterForm.IsSubmitted %}
+            <header class="hero-area">
+                <div class="hero-content">
+                    <div class="content-column">
+                        <h1>Odpovedzte Zuzane!</h1>
+                        <div class="counter">
+                            <p></p>
+                        </div>
+                        <a class="button" href="#">Zisti viac!</a>
+                    </div>
                 </div>
-            </div>
-        </header>
-    {% else %}
-        {% if not c.SupporterForm.IsSuccess %}
-            <div style="padding-top: 50px;"></div>
+            </header>
+        {% else %}
+            {% if not c.SupporterForm.IsSuccess %}
+                <div style="padding-top: 50px;"></div>
+            {% endif %}
         {% endif %}
     {% endif %}
 {% endblock %}
 
 {% block content %}
     <main>
-        {% if not c.SupporterForm.IsSubmitted %}
-            {% include 'components/Counter.twig' with { Counter: c.Counter } %}
-            {% include 'components/About.twig' %}
-            {% include 'components/Questions.twig' %}
-        {% endif %}
-
-        {% if c.SupporterForm.IsSubmitted and c.SupporterForm.IsSuccess %}
-            {% include 'components/SupportFormThankYou.twig' with { Form: c.SupporterForm }  %}
+        {% if c.EmailConfirmation.IsInvoked %}
+            {% include 'components/SupportFormConfirmation.twig' %}
         {% else %}
-            {% include 'components/SupportForm.twig' with { Form: c.SupporterForm } %}
-        {% endif %}
+            {% if not c.SupporterForm.IsSubmitted %}
+                {% include 'components/Counter.twig' with { Counter: c.Counter } %}
+                {% include 'components/About.twig' %}
+                {% include 'components/Questions.twig' %}
+            {% endif %}
 
-        {% if not c.SupporterForm.IsSubmitted or c.SupporterForm.IsSuccess %}
-            {% include 'components/Goals.twig' %}
+            {% if c.SupporterForm.IsSubmitted and c.SupporterForm.IsSuccess %}
+                {% include 'components/SupportFormThankYou.twig' with { Form: c.SupporterForm }  %}
+            {% else %}
+                {% include 'components/SupportForm.twig' with { Form: c.SupporterForm } %}
+            {% endif %}
+
+            {% if not c.SupporterForm.IsSubmitted or c.SupporterForm.IsSuccess %}
+                {% include 'components/Goals.twig' %}
+            {% endif %}
         {% endif %}
     </main>
 {% endblock %}

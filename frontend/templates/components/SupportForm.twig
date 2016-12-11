@@ -30,21 +30,16 @@
                 {{ f.input(FormFields.LastName) }}
             </div>
             <div class="select-field">
-                <label for="country">Krajina</label>
-                <select name="cars">
-                    <option value="slovakia" selected>Slovakia</option>
-                    <option value="cesko">Cesko</option>
-                    <option value="francuzsko">francuzsko</option>
-                    <option value="nemecko">Nemecko</option>
-                </select>
+                {{ f.label(FormFields.Country) }}
+                {{ f.input(FormFields.Country) }}
             </div>
             <div class="text-field">
                 {{ f.label(FormFields.City) }}
                 {{ f.input(FormFields.City) }}
             </div>
             <fieldset class="check-field">
-                {{ f.input(FormFields.Hide) }}
-                {{ f.label(FormFields.Hide) }}
+                {{ f.input(FormFields.Show) }}
+                {{ f.label(FormFields.Show) }}
             </fieldset>
             <div class="form-actions">
                 {#Odoslaním formulára súhlasíte so spraovaním osobných údajov bla bla. Vo verejnom zozname bude zverejnené iba Vaše meno a priezvisko.#}

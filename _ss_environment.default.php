@@ -9,3 +9,11 @@ define('SS_DATABASE_USERNAME', 'root');
 define('SS_DATABASE_PASSWORD', '');
 
 define('SS_ENVIRONMENT_TYPE', 'dev');
+
+define('SMTP_HOST', '');
+define('SMTP_PORT', 587);
+define('SMTP_PROTOCOL', 'tls');
+define('SMTP_LOGIN', '');
+define('SMTP_PASSWORD', '');
+
+define('MAIL_BASE_URL', 'http://tis-zuzana.dev/');
