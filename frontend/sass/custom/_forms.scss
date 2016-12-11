@@ -1,15 +1,5 @@
 .support-form {
 	@include grid-row;
-	max-height: calc-rem(2000);
-	overflow: hidden;
-	@include ps-transition(max-height);
-
-	&.is-closed {
-		max-height: 0;
-		~ .after-form {
-			max-height: calc-rem(2000);
-		}
-	}
 
 	.check-field,
 	.email-field,

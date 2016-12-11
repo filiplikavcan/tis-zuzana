@@ -1,9 +1,6 @@
 .after-form {
   @include grid-row;
-	max-height: 0;
-  width: 100%;
-	overflow: hidden;
-	@include ps-transition(max-height);
+  padding-top: calc-rem(24);
 
 	p a {
     display: inline-block;
@@ -19,7 +16,7 @@
 
 	.mail-content {
     position: relative;
-		max-width: calc-rem(520);
+		max-width: calc-rem(620);
 		margin: 0 auto;
 		text-align: left;
 		font-weight: 300;
@@ -45,4 +42,7 @@
       transform: translateX(90%) translateY(70%);
     }
 	}
+  @include breakpoint(medium){
+    padding-top: calc-rem(64);
+  }
 }
