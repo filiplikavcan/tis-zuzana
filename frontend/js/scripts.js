@@ -7,6 +7,17 @@ jQuery( document ).ready(function( $ ) {
     event.preventDefault();
     $(this).parent().removeClass('is-opened');
   });
+  $('input[name=Country]').each(function(){
+      var input = $(this);
+
+      var select = $('<select name="Country"></select>');
+
+      $.each(COUNTRIES.sk, function(code, name) {
+          select.append('<option value="' + code + '"' + (code == 'SK' ? ' selected="selected"' : '') + '>' + name + '</option>');
+      });
+
+      input.replaceWith(select);
+  });
   if(!$("#teasers-list").length){
     return;
   }

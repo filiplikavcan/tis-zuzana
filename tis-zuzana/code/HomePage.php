@@ -56,7 +56,24 @@ class HomePage extends Page
 
 class HomePage_Controller extends Page_Controller
 {
+    private static $url_handlers = array(
+        'confirm/$hash' => 'confirmSupporterEmail'
+    );
+
+    private static $allowed_actions = array(
+        'confirmSupporterEmail',
+    );
+
     protected $is_data_cached = false;
+
+    public function setupWidgets()
+    {
+        parent::setupWidgets();
+
+        $this->addWidget('EmailConfirmation', Cleopas\Widgets\Data\Basic::create()
+            ->IsInvoked(false)
+            ->IsSuccess(false));
+    }
 
     protected function setupForms()
     {
@@ -84,5 +101,17 @@ class HomePage_Controller extends Page_Controller
             })
             ->Supporters(Supporter::get()->count())
             ->Answers($this->Questions()->filter(array('IsAnswered' => true))->count());
+    }
+
+    public function confirmSupporterEmail(SS_HTTPRequest $request)
+    {
+        $this->getWidget('EmailConfirmation')
+            ->IsInvoked(true)
+            ->IsSuccess(Supporter::confirmedEmailByHash($request->param('hash')));
+    }
+
+    public function getEmailConfirmation()
+    {
+        return $this->getWidget('EmailConfirmation');
     }
 }

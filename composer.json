@@ -14,7 +14,8 @@
 		"silverstripe/reports": "3.5.0",
 		"silverstripe/siteconfig": "3.5.0",
 
-		"bratiask/cleopas": "*"
+		"bratiask/cleopas": "*",
+		"phpmailer/phpmailer": "^5.2"
 	},
 	"require-dev": {
 		"phpunit/PHPUnit": "~3.7@stable"

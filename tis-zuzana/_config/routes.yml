@@ -1,0 +1,7 @@
+---
+Name: tis-zuzanaroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    's/confirm/$hash': 'HomePage_Controller'
