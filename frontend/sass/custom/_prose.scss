@@ -183,19 +183,14 @@
 		padding-top: calc-rem(12);
 		a {
 			display: block;
-			padding: calc-rem(6 16);
+			padding: calc-rem(6 0 2);
+			margin: calc-rem(0 12);
 			color: $blue-shakespeare;
 			font-weight: 400;
-			span {
-				display: inline-block;;
-				padding: calc-rem(2 0);
-				box-shadow: calc-rem(0 2 0 0) $transparent;
-				@include ps-transition(box-shadow);
-			}
+			box-shadow: calc-rem(0 2 0 0) $transparent;
+			@include ps-transition(box-shadow);
 			@include link-states{
-				span {
-					box-shadow: calc-rem(0 2 0 0) currentColor;
-				}
+				box-shadow: calc-rem(0 2 0 0) currentColor;
 			}
 		}
 	}
