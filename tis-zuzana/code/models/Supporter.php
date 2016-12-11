@@ -45,7 +45,7 @@ class Supporter extends DataObject
         $email->Body = "Dobrý deň\n\n";
         $email->Body .= "ďakujeme za Vašu podporu. Prosím kliknite na (alebo skopírujte ručne do prehliadača) tento link, aby ste tým overili Vašu emailovú adresu.\n\n";
         $email->Body .= $this->getConfirmationLink() . "\n\n";
-        $email->Body .= "Transparency Internation SK";
+        $email->Body .= "Transparency International SK";
 
         $email->send();
     }
