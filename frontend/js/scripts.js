@@ -7,4 +7,9 @@ jQuery( document ).ready(function( $ ) {
     event.preventDefault();
     $(this).parent().removeClass('is-opened');
   });
+  $('.teasers-list').masonry({
+  // options
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer'
+  });
 });
