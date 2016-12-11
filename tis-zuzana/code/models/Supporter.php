@@ -43,8 +43,12 @@ class Supporter extends DataObject
 
         $email->Subject = 'Odpovedzte Zuzane: Overenie emailovej adresy';
         $email->Body = "Dobrý deň\n\n";
-        $email->Body .= "ďakujeme za Vašu podporu. Prosím kliknite na (alebo skopírujte ručne do prehliadača) tento link, aby ste tým overili Vašu emailovú adresu.\n\n";
+        $email->Body .= "ďakujeme za Vašu podporu. Ak sa chcete zapojiť do výzvy Odpovedzte Zuzane, potvrďte záujem kliknutím na nasledujúci odkaz:\n\n";
         $email->Body .= $this->getConfirmationLink() . "\n\n";
+        $email->Body .= "Pomáhate nám tým predísť viacnásobným podpisom a odoslaniam od fiktívnych osôb.\n";
+        $email->Body .= "Ak ste o zapojenie do výzvy nežiadali, prosíme, aby ste túto správu ignorovali.\n\n";
+        $email->Body .= "Ďakujeme\n\n";
+        $email->Body .= "S pozdravom\n";
         $email->Body .= "Transparency International SK";
 
         $email->send();
