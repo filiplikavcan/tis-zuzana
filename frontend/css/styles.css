@@ -3679,13 +3679,14 @@ h2 {
     .text-column {
       width: 83.33333%;
       margin-left: auto;
-      margin-right: auto; }
+      margin-right: auto;
+      padding-bottom: 1.5rem; }
       .text-column, .text-column:last-child:not(:first-child) {
         float: none;
         clear: both; } }
   @media screen and (min-width: 64em) {
     .text-column {
-      width: 66.66667%; } }
+      width: 58.33333%; } }
 
 .signs-column,
 .media-column {
@@ -4166,19 +4167,17 @@ h2 {
     clear: both; }
 
 .points-list {
-  width: 100%;
-  float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
   margin: 0;
   list-style: none;
   text-align: center; }
-  @media screen and (min-width: 40em) {
-    .points-list {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  .points-list:last-child:not(:first-child) {
-    float: right; }
+  .points-list::before, .points-list::after {
+    content: ' ';
+    display: table; }
+  .points-list::after {
+    clear: both; }
   .points-list > li {
     width: 100%;
     float: left; }
@@ -4213,10 +4212,12 @@ h2 {
       .points-list h2 {
         margin-bottom: 2.25rem; }
       .points-list > li {
+        padding: 1.25rem;
         margin-bottom: 1.5rem; } }
   @media screen and (min-width: 64em) {
     .points-list {
-      width: 66.66667%; } }
+      width: 66.66667%;
+      margin-bottom: 1.5rem; } }
 
 .check-list {
   max-width: 31.25rem;

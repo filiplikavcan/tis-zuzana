@@ -28,9 +28,10 @@
 	@include breakpoint(medium) {
 		 @include grid-col-size(10);
 		@include grid-col-pos(center);
+		padding-bottom: calc-rem(24);
 	}
 	@include breakpoint(large) {
-		 @include grid-col-size(8);
+		 @include grid-col-size(7);
 	}
 }
 

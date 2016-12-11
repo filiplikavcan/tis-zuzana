@@ -7,7 +7,7 @@
 
 // Points list
 .points-list {
-	@include grid-column(12);
+	@include grid-row;
 	@include grid-layout($n: 1, $selector: "li");
 	margin: 0;
 	list-style: none;
@@ -31,11 +31,13 @@
 		}
 
 		> li {
+			padding: calc-rem(20);
 			margin-bottom: rem-calc(24);
 		}
 	}
 	@include breakpoint(large) {
 		@include grid-col-size(8);
+		margin-bottom: calc-rem(24);
 	}
 }
 
