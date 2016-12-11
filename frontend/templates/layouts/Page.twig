@@ -22,16 +22,7 @@
 
         <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script type='text/javascript' src="/static/js/scripts.min.js"></script>
-        <script>
-            $(function(){
-                $(".counter p").typed({
-                    strings: ["Do konca vyzvy ostava uz len <strong>5 dni</strong>.", "<strong>5506 ludi</strong> uz podporilo Zuzanu.", "Pan minister odpovedal na <strong>0 otazok!</strong>"],
-                    typeSpeed: 0,
-                    loop: true,
-                    backDelay: 2000,
-                    backSpeed: -50
-                });
-            });
-        </script>
+
+        {% block js %}{% endblock %}
     </body>
 </html>

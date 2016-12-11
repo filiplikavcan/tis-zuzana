@@ -7,7 +7,6 @@
             <header class="hero-area">
                 <div class="hero-content">
                     <div class="content-column">
-                        <h1>Odpovedzte Zuzane!</h1>
                         <div class="counter">
                             <p></p>
                         </div>
@@ -29,7 +28,6 @@
             {% include 'components/SupportFormConfirmation.twig' %}
         {% else %}
             {% if not c.SupporterForm.IsSubmitted %}
-                {% include 'components/Counter.twig' with { Counter: c.Counter } %}
                 {% include 'components/About.twig' %}
                 {% include 'components/Questions.twig' %}
             {% endif %}
@@ -45,4 +43,21 @@
             {% endif %}
         {% endif %}
     </main>
+{% endblock %}
+
+{% block js %}
+    <script>
+        $(function(){
+            $(".counter p").typed({
+                strings: [
+                    "Do konca výzvy zostáva <strong>{{ c.Counter.Days }} {{ c.Counter.Days == 1 ? 'deň' : (c.Counter.Days < 5 ? 'dni' : 'dní') }}</strong>.",
+                    {% if c.Counter.Supporters > 5000 %}"Už <strong>{{ c.Counter.Supporters }} ľudí</strong> podporilo Zuzanu.",{% endif %}
+                    "Minister odpovedal na <strong>{{ c.Counter.Answers }} {{ c.Counter.Days == 1 ? 'otázku' : (c.Counter.Days < 5 ? 'otázky' : 'otázok') }}!</strong>"],
+                typeSpeed: 0,
+                loop: true,
+                backDelay: 2000,
+                backSpeed: -50
+            });
+        });
+    </script>
 {% endblock %}

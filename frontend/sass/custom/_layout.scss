@@ -42,3 +42,11 @@
 	padding-left: rem-calc(15);
 	padding-right: rem-calc(15);
 }
+
+.anchor {
+	font-size: 1px;
+	position: relative;
+	top: rem-calc(-60);
+	visibility: hidden;
+	display: block;
+}

@@ -8,6 +8,7 @@
   "SupporterForm": {
     "include": "@Form:Supporter",
     "Title": "SupportTitle",
+    "Hash": "getSupportHash()",
     "Content": "SupportContent",
     "ThankYou": {
       "Title": "ThankYouTitle",
@@ -21,10 +22,12 @@
   },
   "About": {
     "Title": "AboutTitle",
+    "Hash": "getAboutHash()",
     "Content": "Content"
   },
   "Questions": {
     "Title": "QuestionsTitle",
+    "Hash": "getQuestionsHash()",
     "Content": "QuestionsContent",
     "Questions from getQuestions()": [
       {

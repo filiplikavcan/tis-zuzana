@@ -34,9 +34,9 @@ class Page_Controller extends Cleopas_Controllers_Base
                 return $this->Title;
             }));
 
-        $this->addWidget('Menu', Cleopas\Widgets\Menu\Basic::create()
+        $this->addWidget('Menu', Cleopas\Widgets\Menu\Menu::create()
             ->setItems(function() {
-                return \SiteTree::get()->filter(array('ParentID' => '0', 'ShowInMenus' => '1'));
+                return MenuItem::get()->sort('SortOrder');
             }));
 
         $this->addWidget('SocialNetworks', Cleopas\Widgets\SocialNetworks\Basic::create()

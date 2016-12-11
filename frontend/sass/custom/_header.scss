@@ -1,5 +1,8 @@
 .hero-area {
-	height: 100%;
+	position: relative;
+	padding-top: 300px;
+	padding-bottom: 100px;
+
 	background-image: url('../assets/hero-image.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -18,13 +21,10 @@
 }
 
 .hero-content {
-	@include grid-row;
 	position: relative;
-	top: 55%;
-	left: 0;
+	@include grid-row;
 	text-align: center;
 	color: white;
-	transform: translateY(-50%);
 
 	.content-column {
 		@include grid-column(12);

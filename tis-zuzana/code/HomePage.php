@@ -70,7 +70,7 @@ class HomePage_Controller extends Page_Controller
     {
         parent::setupWidgets();
 
-        $this->addWidget('EmailConfirmation', Cleopas\Widgets\Data\Basic::create()
+        $this->addWidget('EmailConfirmation', Cleopas\Widgets\Data\Data::create()
             ->IsInvoked(false)
             ->IsSuccess(false));
     }
@@ -90,9 +90,24 @@ class HomePage_Controller extends Page_Controller
         return $this->Goals()->Sort('Sort');
     }
 
+    public function getAboutHash()
+    {
+        return \Nette\Utils\Strings::webalize($this->AboutTitle);
+    }
+
+    public function getQuestionsHash()
+    {
+        return \Nette\Utils\Strings::webalize($this->QuestionsTitle);
+    }
+
+    public function getSupportHash()
+    {
+        return \Nette\Utils\Strings::webalize($this->SupportTitle);
+    }
+
     public function getCounter()
     {
-        return Cleopas\Widgets\Data\Basic::create()
+        return Cleopas\Widgets\Data\Data::create()
             ->Days(function() {
                 $start = new DateTime(date('Y-m-d'));
                 $end = new DateTime('2016-12-19');
