@@ -1,8 +1,14 @@
-<footer class="s-footer">
-	<div class="container">
-		<div class="b-info">
-            {% include 'components/widgets/Copyright.twig' with c.Copyright %}
-            {% include 'components/widgets/SocialNetworks.twig' with c.SocialNetworks %}
+<footer>
+	<div class="row">
+		<div class="social-col">
+			<ul class="social-list">
+				<li><a class="icon-facebook" href="#"><span class="visually-hidden">facebook</span></a></li>
+				<li><a class="icon-twitter" href="#"><span class="visually-hidden">twitter</span></a></li>
+				<li><a class="icon-envelope" href="#"><span class="visually-hidden">email</span></a></li>
+			</ul>
+		</div>
+		<div class="contact-col">
+			<p>{% include 'components/widgets/Copyright.twig' with c.Copyright %}</p>
 		</div>
 	</div>
 </footer>

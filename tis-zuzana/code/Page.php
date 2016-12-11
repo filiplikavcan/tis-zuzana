@@ -45,7 +45,7 @@ class Page_Controller extends Cleopas_Controllers_Base
             }));
 
         $this->addWidget('Copyright', Cleopas\Widgets\Copyright\Basic::create()
-            ->setOwnerName('TIS')
+            ->setOwnerName('Transparency International SK')
             ->setFromYear(2016));
     }
 

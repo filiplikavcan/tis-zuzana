@@ -13,7 +13,9 @@
             </div>
         </header>
     {% else %}
-        <div style="padding-top: 50px;"></div>
+        {% if not c.SupporterForm.IsSuccess %}
+            <div style="padding-top: 50px;"></div>
+        {% endif %}
     {% endif %}
 {% endblock %}
 
@@ -31,7 +33,7 @@
             {% include 'components/SupportForm.twig' with { Form: c.SupporterForm } %}
         {% endif %}
 
-        {% if not c.SupporterForm.IsSubmitted %}
+        {% if not c.SupporterForm.IsSubmitted or c.SupporterForm.IsSuccess %}
             {% include 'components/Goals.twig' %}
         {% endif %}
     </main>
