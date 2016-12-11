@@ -1,18 +1,26 @@
 h2 {
-  margin-top: 0;//rem-calc(6);
-  margin-bottom: rem-calc(12);
+	margin-top: rem-calc(6);
 }
 
+.lead {
+	margin-bottom: calc-rem(24);
+	font-size: calc-rem(20);
+	line-height: 1.4;
+	font-weight: 400;
+}
 @include breakpoint(medium) {
-  h2 {
-    margin-top: 0;//rem-calc(12);
+	h2 {
+		margin-top: rem-calc(12);
+	}
+  p {
+    font-size: calc-rem(18);
+  }
+  .lead {
+    margin-bottom: calc-rem(36);
   }
 }
-
-p {
-  margin-bottom: rem-calc(10);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+@include breakpoint(large) {
+	h2 {
+		margin-bottom: rem-calc(24);
+	}
 }

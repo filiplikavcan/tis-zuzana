@@ -26,10 +26,10 @@
 	font-size: calc-rem(20);
 
 	@include breakpoint(medium) {
-		@include grid-col-size(8);
+		 @include grid-col-size(10);
 		@include grid-col-pos(center);
 	}
 	@include breakpoint(large) {
-		@include grid-col-size(8);
+		 @include grid-col-size(8);
 	}
 }
