@@ -52,6 +52,31 @@ class HomePage extends Page
 
         return $fields;
     }
+
+    public function getQuestions()
+    {
+        return $this->Questions()->Sort('Sort');
+    }
+
+    public function getGoals()
+    {
+        return $this->Goals()->Sort('Sort');
+    }
+
+    public function getAboutHash()
+    {
+        return \Nette\Utils\Strings::webalize($this->AboutTitle);
+    }
+
+    public function getQuestionsHash()
+    {
+        return \Nette\Utils\Strings::webalize($this->QuestionsTitle);
+    }
+
+    public function getSupportHash()
+    {
+        return \Nette\Utils\Strings::webalize($this->SupportTitle);
+    }
 }
 
 class HomePage_Controller extends Page_Controller
@@ -80,31 +105,6 @@ class HomePage_Controller extends Page_Controller
         $this->addFormWidget('Supporter');
     }
 
-    public function getQuestions()
-    {
-        return $this->Questions()->Sort('Sort');
-    }
-
-    public function getGoals()
-    {
-        return $this->Goals()->Sort('Sort');
-    }
-
-    public function getAboutHash()
-    {
-        return \Nette\Utils\Strings::webalize($this->AboutTitle);
-    }
-
-    public function getQuestionsHash()
-    {
-        return \Nette\Utils\Strings::webalize($this->QuestionsTitle);
-    }
-
-    public function getSupportHash()
-    {
-        return \Nette\Utils\Strings::webalize($this->SupportTitle);
-    }
-
     public function getCounter()
     {
         return Cleopas\Widgets\Data\Data::create()
@@ -114,7 +114,7 @@ class HomePage_Controller extends Page_Controller
                 $diff = $start->diff($end);
                 return $diff->format('%R') == '+' ? $diff->days : 0;
             })
-            ->Supporters(Supporter::get()->count())
+            ->Supporters(Supporter::confirmed()->count())
             ->Answers($this->Questions()->filter(array('IsAnswered' => true))->count());
     }
 

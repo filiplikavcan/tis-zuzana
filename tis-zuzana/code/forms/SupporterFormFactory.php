@@ -37,8 +37,7 @@ class SupporterFormFactory extends BaseFormFactory
                 $supporter = new Supporter();
 
                 $supporter->Email = $data->Email;
-                $supporter->FirstName = $data->FirstName;
-                $supporter->LastName = $data->LastName;
+                $supporter->Name = $data->Name;
                 $supporter->City = $data->City;
                 $supporter->Country = $data->Country;
                 $supporter->Show = $data->Show;

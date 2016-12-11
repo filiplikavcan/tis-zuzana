@@ -1,0 +1,21 @@
+{
+  "include": "'Page.json'",
+  "EmailTemplate": "getHomepage().EmailTemplate",
+  "SupporterForm": {
+    "include": "@Form:Supporter",
+    "Title": "getHomepage().SupportTitle",
+    "Hash": "getHomepage().getSupportHash()",
+    "Content": "getHomepage().SupportContent",
+    "ThankYou": {
+      "Title": "getHomepage().ThankYouTitle",
+      "Content": "getHomepage().ThankYouContent"
+    }
+  },
+  "SupportersCount": "getSupportersCount()",
+  "Supporters from getSupporters()": [
+    {
+      "Name": "Name",
+      "Country": "getCountryName()"
+    }
+  ]
+}

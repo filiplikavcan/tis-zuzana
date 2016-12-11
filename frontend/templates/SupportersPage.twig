@@ -1,0 +1,61 @@
+{% extends "layouts/Page.twig" %}
+{% import 'macros/form.twig' as f %}
+
+{% block content %}
+    <main>
+        {% if not c.SupporterForm.IsSubmitted %}
+            <div class="panel">
+                <div class="prose">
+                    <div class="text-column">
+                        <h1>{{ c.Title }}</h1>
+                        {% if c.SupportersCount > 5000 %}
+                            <div class="lead">
+                                <p>Zuzanu doteraz podporilo <strong>{{ c.SupportersCount }}</strong> ľudí.</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="signs-column">
+                        <ul class="people-list">
+                            {% for Supporter in c.Supporters %}
+                                <li><p><strong>{{ Supporter.Name }}</strong>{% if Supporter.Country %}, {{ Supporter.Country }}{% endif %}</p></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel gray">
+                <div class="prose">
+                    <div class="text-column">
+                        <h2>Podporovatelia</h2>
+                    </div>
+                    <div class="signs-column">
+                        <ul class="vip-list">
+                            <li><p><strong>Meno Priezvisko</strong>, Biela Vrana</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Slovensko Digital</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Velvyslanec XY</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Riaditel Firma XY</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Biela Vrana</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Slovensko Digital</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Velvyslanec XY</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Riaditel Firma XY</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Biela Vrana</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Slovensko Digital</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Velvyslanec XY</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Riaditel Firma XY</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Biela Vrana</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Slovensko Digital</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Velvyslanec XY</p></li>
+                            <li><p><strong>Meno Priezvisko</strong>, Riaditel Firma XY</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if c.SupporterForm.IsSubmitted and c.SupporterForm.IsSuccess %}
+            {% include 'components/SupportFormThankYou.twig' with { Form: c.SupporterForm }  %}
+        {% else %}
+            {% include 'components/SupportForm.twig' with { Form: c.SupporterForm } %}
+        {% endif %}
+    </main>
+{% endblock %}
