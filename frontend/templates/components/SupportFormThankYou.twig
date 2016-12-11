@@ -1,37 +1,15 @@
-<div class="panel prose">
-    <div class="text-column no-margin">
-        <h2>{{ Form.ThankYou.Title }}</h2>
-
-        {{ Form.ThankYou.Content|shortcodes }}
-    </div>
-</div>
-<div class="prose panel spread-the-word">
-    <div class="text-column">
-        <div class="prose">
-            <div class="share-option">
-                <p>
-                    <a class="button" href="https://www.facebook.com/sharer.php?title={{ 'Odpovedzte Zuzane'|url_encode }}&description={{ 'Podporujem Zuzanu a chcem, aby minister Lajčák odpovedal na dôležité otázky, ktoré sa pýta.'|url_encode }}&u=http%3A%2F%2Fodpovedztezuzane.sk">
-                        Zdielať na FB
-                    </a>
-                </p>
-
-                <p>
-                    Dajte vedieť svojim kamarátom, že ste podporili dobrú vec. Možno sa pridajú aj oni.
-                </p>
+<div class="panel">
+    <div class="after-form">
+        <div class="text-column">
+            <h1>{{ Form.ThankYou.Title }}</h1>
+            <div class="lead">
+                {{ Form.ThankYou.Content|shortcodes }}
             </div>
-
-            <div class="share-option">
-                <p>
-                    <a class="button" href="mailto:miroslav.lajcak@mzv.sk?subject=Odpovedzte Zuzane&body={{ c.EmailTemplate|url_encode }}">Poslať email</a>
-                </p>
-
-                <p>
-                    Pošlite ministrovi email na adresu <code>miroslav.lajcak@mzv.sk</code>. Ak sa Vám obsah emailu nepredvyplní po kliknutí na tlačidlo, môžete skopírovať nižšie uvedený text a poslať email ručne.
-                </p>
+            <a class="button" target="_blank" href="https://www.facebook.com/sharer.php?title={{ 'Odpovedzte Zuzane'|url_encode }}&description={{ 'Podporujem Zuzanu a chcem, aby minister Lajčák odpovedal na dôležité otázky, ktoré sa pýta.'|url_encode }}&u=http%3A%2F%2Fodpovedztezuzane.sk">Zazdieľaj na Facebooku</a>
+            <a class="button" href="mailto:miroslav.lajcak@mzv.sk?subject=Odpovedzte Zuzane&body={{ c.EmailTemplate|url_encode }}">Pošli mail</a>
+            <div class="mail-content">
+                {{ c.EmailTemplate|nl2br }}
             </div>
         </div>
-
-
-        <blockquote style='text-align: left; font-family: Courier, "Courier New", monospace; font-size: 14px; color: black; margin-top: 30px;'>{{ c.EmailTemplate|nl2br }}</blockquote>
     </div>
 </div>

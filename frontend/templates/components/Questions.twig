@@ -2,14 +2,15 @@
     <div class="prose">
         <div class="text-column">
             <h2>{{ c.Questions.Title }}</h2>
-            {{ c.Questions.Content|shortcodes }}
+            <div class="lead">
+                {{ c.Questions.Content|shortcodes }}
+            </div>
         </div>
         <ul class="questions-list">
+
             {% for Question in c.Questions.Questions %}
                 <li>
-                    <div>
-                        <h3>{{ Question.Title }}</h3>
-                    </div>
+                    <p><strong>{{ Question.Title }}</strong></p>
                     <div>
                         {{ Question.Content|shortcodes }}
                     </div>
