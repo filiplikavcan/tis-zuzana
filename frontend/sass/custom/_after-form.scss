@@ -39,6 +39,7 @@
       line-height: 1;
       font-weight: 700;
       color: rgba($blue-burst, 0.2);
+      z-index: -1;
     }
     &:before {
       top: 0;

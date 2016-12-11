@@ -47,8 +47,10 @@
     <div class="hero-content">
       <div class="content-column">
         <h1>Podporujem Zuzanu</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nam reiciendis eos facere suscipit numquam laboriosam voluptates, cumque dolorem!</p>
-        <a class="button" href="#">Zisti viac!</a>
+        <div class="counter">
+          <p></p>
+        </div>
+        <a class="button" href="https://www.facebook.com/sharer.php?title=Odpovedzte%20Zuzane&description=Podporujem%20Zuzanu%20a%20chcem%2C%20aby%20minister%20Laj%C4%8D%C3%A1k%20odpovedal%20na%20d%C3%B4le%C5%BEit%C3%A9%20ot%C3%A1zky%2C%20ktor%C3%A9%20sa%20p%C3%BDta.&u=http%3A%2F%2Fodpovedztezuzane.sk">Zdielaj na Facebook</a>
       </div>
     </div>
   </header>
@@ -187,8 +189,19 @@
       </div>
     </div>
   </footer>
-  <!-- Load Facebook SDK for JavaScript -->
   <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type='text/javascript' src="../js/scripts.min.js"></script>
+  <script type='text/javascript' src="../js/lity.min.js"></script>
+  <script type='text/javascript' src="../js/typed.min.js"></script>
+  <script>
+    $(function(){
+        $(".counter p").typed({
+          strings: ["Do konca vyzvy ostava uz len <strong>5 dni</strong>.", "<strong>5506 ludi</strong> uz podporilo Zuzanu.", "Pan minister odpovedal na <strong>0 otazok!</strong>"],
+          typeSpeed: 0,
+          loop: true,
+          backDelay: 1000
+        });
+    });
+  </script>
+  <script type='text/javascript' src="../js/scripts.js"></script>
 </body>
 </html>

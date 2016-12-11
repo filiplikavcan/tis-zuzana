@@ -1,0 +1,50 @@
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+.counter {
+  height: calc-rem(50);
+  margin-bottom: calc-rem(24);
+
+  p {
+    display: inline;
+    font-size: calc-rem(22);
+    // font-weight: 400;
+  }
+  @include breakpoint(medium){
+    height: auto;
+    margin-bottom: calc-rem(32);
+    p {
+      font-size: calc-rem(36);
+    }
+    .typed-cursor {
+      font-size: calc-rem(42)
+    }
+  }
+  @include breakpoint(large){
+    p {
+      font-size: calc-rem(48);
+    }
+    .typed-cursor {
+      font-size: calc-rem(56)
+    }
+  }
+}

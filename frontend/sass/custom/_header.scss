@@ -31,13 +31,13 @@
 	}
 	@include breakpoint(medium) {
 		.content-column {
-			@include grid-col-size(8);
+			@include grid-col-size(10);
 			@include grid-col-pos(center);
 		}
 	}
 	@include breakpoint(large) {
 		.content-column {
-			@include grid-col-size(6);
+			@include grid-col-size(9);
 		}
 	}
 }
