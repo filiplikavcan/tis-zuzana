@@ -140,3 +140,37 @@
 		font-size: calc-rem(20);
 	}
 }
+
+.people-list {
+	@include reset-ul;
+	@include grid-layout($n: 1, $selector: "li");
+	padding: calc-rem(6);
+	text-align: center;
+	p {
+		margin-bottom: 0;
+	}
+	@include breakpoint(medium){
+		@include grid-layout($n: 2, $selector: "li");
+	}
+	@include breakpoint(large){
+		@include grid-layout($n: 4, $selector: "li");
+	}
+}
+
+.vip-list {
+	@include reset-ul;
+	@include grid-layout($n: 1, $selector: "li");
+	padding: calc-rem(6);
+	text-align: center;
+	p {
+		margin-bottom: 0;
+		font-size: calc-rem(20);
+	}
+	@include breakpoint(medium){
+		@include grid-layout($n: 2, $selector: "li");
+		padding: calc-rem(8);
+	}
+	@include breakpoint(large){
+		@include grid-layout($n: 3, $selector: "li");
+	}
+}
