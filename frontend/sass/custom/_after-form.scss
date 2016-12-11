@@ -14,6 +14,15 @@
 		}
 	}
 
+  .button {
+    min-width: calc-rem(200);
+    margin: calc-rem(0 6 36);
+  }
+  span{
+    font-style: italic;
+    font-weight: 400;
+  }
+
 	.mail-content {
     position: relative;
 		max-width: calc-rem(620);
