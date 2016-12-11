@@ -92,21 +92,23 @@
 	@include reset-ul(true);
 	li {
 		@include grid-column(12);
+		margin-bottom: calc-rem(12);
+		p:first-child {
+			margin-bottom: calc-rem(6);
+		}
 	}
 	strong {
-		font-size: calc-rem(18);
+		font-size: calc-rem(20);
 		font-style: italic;
 		font-weight: 500;
 	}
 
 	@include breakpoint(medium){
-		li {
-		@include grid-col-size(6);
-		}
-	}
-	@include breakpoint(medium){
-		max-width: calc-rem(900);
+		max-width: calc-rem(700);
 		margin: 0 auto;
+		li {
+		@include grid-col-size(12);
+		}
 	}
 }
 

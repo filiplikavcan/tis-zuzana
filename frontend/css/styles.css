@@ -4223,24 +4223,26 @@ h2 {
     width: 100%;
     float: left;
     padding-left: 0.625rem;
-    padding-right: 0.625rem; }
+    padding-right: 0.625rem;
+    margin-bottom: 0.75rem; }
     @media screen and (min-width: 40em) {
       .questions-list li {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     .questions-list li:last-child:not(:first-child) {
       float: right; }
+    .questions-list li p:first-child {
+      margin-bottom: 0.375rem; }
   .questions-list strong {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-style: italic;
     font-weight: 500; }
   @media screen and (min-width: 40em) {
-    .questions-list li {
-      width: 50%; } }
-  @media screen and (min-width: 40em) {
     .questions-list {
-      max-width: 56.25rem;
-      margin: 0 auto; } }
+      max-width: 43.75rem;
+      margin: 0 auto; }
+      .questions-list li {
+        width: 100%; } }
 
 .next-list {
   list-style: none;
