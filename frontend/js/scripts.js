@@ -19,4 +19,9 @@ jQuery( document ).ready(function( $ ) {
 
       input.replaceWith(select);
   });
+  $('.teasers-list').masonry({
+  // options
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer'
+  });
 });
