@@ -17,17 +17,13 @@
     </div>
     <div class="form-wrapper">
         {{ f.begin(Form, FormFields, { class: "support-form" }) }}
-            <div class="email-field">
+            <div class="text-field">
                 {{ f.label(FormFields.Email) }}
                 {{ f.input(FormFields.Email) }}
             </div>
             <div class="text-field">
-                {{ f.label(FormFields.FirstName) }}
-                {{ f.input(FormFields.FirstName) }}
-            </div>
-            <div class="text-field">
-                {{ f.label(FormFields.LastName) }}
-                {{ f.input(FormFields.LastName) }}
+                {{ f.label(FormFields.Name) }}
+                {{ f.input(FormFields.Name) }}
             </div>
             <div class="select-field">
                 {{ f.label(FormFields.Country) }}

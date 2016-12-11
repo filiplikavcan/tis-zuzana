@@ -8,8 +8,7 @@ class SupporterFormFactory extends BaseFormFactory
         $form->addText('Email', 'Email*')
             ->addRule(Application\Form::EMAIL, 'A valid emaill address is required.')
             ->addRule(\Nette\Forms\Form::REQUIRED, 'Tento údaj je povinný.');
-        $form->addText('FirstName', 'Meno');
-        $form->addText('LastName', 'Priezvisko');
+        $form->addText('Name', 'Meno a priezvisko');
         $form->addText('City', 'Mesto');
         $form->addText('Country', 'Krajina');
         $form->addCheckbox('Show', 'Súhlasím, so zverejnením mena a krajiny v zozname signatárov')

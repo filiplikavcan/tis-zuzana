@@ -6,8 +6,7 @@ class Supporter extends DataObject
 {
     private static $db = array(
         'Email' => 'Varchar(100)',
-        'FirstName' => 'Varchar(100)',
-        'LastName' => 'Varchar(100)',
+        'Name' => 'Varchar(255)',
         'City' => 'Varchar(100)',
         'Country' => 'Varchar(100)',
         'Show' => 'Boolean',
@@ -42,11 +41,10 @@ class Supporter extends DataObject
         $email->addAddress($this->Email);
 
         $email->Subject = 'Odpovedzte Zuzane: Overenie emailovej adresy';
-        $email->Body = "Dobrý deň\n\n";
+        $email->Body = "Dobrý deň {$this->Name}\n\n";
         $email->Body .= "ďakujeme za Vašu podporu. Ak sa chcete zapojiť do výzvy Odpovedzte Zuzane, potvrďte záujem kliknutím na nasledujúci odkaz:\n\n";
         $email->Body .= $this->getConfirmationLink() . "\n\n";
-        $email->Body .= "Pomáhate nám tým predísť viacnásobným podpisom a odoslaniam od fiktívnych osôb.\n";
-        $email->Body .= "Ak ste o zapojenie do výzvy nežiadali, prosíme, aby ste túto správu ignorovali.\n\n";
+        $email->Body .= "Pomáhate nám tým predísť viacnásobným podpisom a odoslaniam od fiktívnych osôb.\n\n";
         $email->Body .= "Ďakujeme\n\n";
         $email->Body .= "S pozdravom\n";
         $email->Body .= "Transparency International SK";
