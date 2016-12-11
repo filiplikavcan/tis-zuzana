@@ -3654,6 +3654,9 @@ p {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem; }
 
+.errors {
+  color: #E1664E; }
+
 .support-form {
   max-width: 75rem;
   margin-left: auto;
@@ -3689,6 +3692,14 @@ p {
     .support-form .text-field:last-child:not(:first-child),
     .support-form .form-actions:last-child:not(:first-child) {
       float: right; }
+  .support-form label.field-error {
+    color: #E1664E; }
+    .support-form label.field-error span {
+      display: inline-block;
+      margin-left: 10px; }
+  .support-form .field-error input,
+  .support-form .field-error select {
+    border-color: #E1664E; }
   .support-form .form-actions {
     padding-top: 0.75rem;
     text-align: center; }
@@ -3746,6 +3757,7 @@ p {
   .support-form .check-field input[type=checkbox]:checked ~ label:after {
     background-color: #39A1CF; }
   @media screen and (min-width: 40em) {
+    .support-form .form-errors,
     .support-form .check-field,
     .support-form .email-field,
     .support-form .form-actions,
@@ -3755,7 +3767,9 @@ p {
       width: 58.33333%;
       margin-left: auto;
       margin-right: auto; }
-      .support-form .check-field, .support-form .check-field:last-child:not(:first-child),
+      .support-form .form-errors, .support-form .form-errors:last-child:not(:first-child),
+      .support-form .check-field,
+      .support-form .check-field:last-child:not(:first-child),
       .support-form .email-field,
       .support-form .email-field:last-child:not(:first-child),
       .support-form .form-actions,
@@ -3783,6 +3797,7 @@ p {
         margin-right: 0;
         float: left;
         clear: none; }
+      .support-form .form-errors,
       .support-form .check-field,
       .support-form .email-field {
         width: 100%; }

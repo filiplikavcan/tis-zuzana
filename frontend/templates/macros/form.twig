@@ -30,18 +30,18 @@
 {# form errors #}
     {% macro errors(Form) %}
         {% if Form.Errors %}
-            <div class="error">
+            <p>
                 {% for Error in Form.Errors %}
                     {{ Error }}
                 {% endfor %}
-            </div>
+            </p>
         {% endif %}
     {% endmacro %}
 
 {# field label #}
     {% macro label(Field) %}
         <label for="{{ Field.Id }}"{% if Field.Errors %} class="field-error"{% endif %}>{{ Field.Label }}
-            {% if Field.Errors %}<br>{% for Error in Field.Errors %}{{ Error }}{% endfor %}{% endif %}
+            {% if Field.Errors %}<span>{% for Error in Field.Errors %}{{ Error }}{% endfor %}</span>{% endif %}
         </label>
     {% endmacro %}
 

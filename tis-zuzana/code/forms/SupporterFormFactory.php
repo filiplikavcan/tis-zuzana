@@ -7,10 +7,10 @@ class SupporterFormFactory extends BaseFormFactory
 
         $form->addText('Email', 'Email*')
             ->addRule(Application\Form::EMAIL, 'A valid emaill address is required.')
-            ->setRequired(true);
-        $form->addText('FirstName', 'First Name');
-        $form->addText('LastName', 'Last Name');
-        $form->addText('City', 'City');
+            ->addRule(\Nette\Forms\Form::REQUIRED, 'Tento údaj je povinný.');
+        $form->addText('FirstName', 'Meno');
+        $form->addText('LastName', 'Priezvisko');
+        $form->addText('City', 'Mesto');
         $form->addCheckbox('Hide', 'Nechcem, aby bolo moje meno zverejnené');
 
         $submit = $form->addSubmit('submit', 'Odoslať');
@@ -51,7 +51,7 @@ class SupporterFormFactory extends BaseFormFactory
         else
         {
             $form->cleanErrors();
-            $form->addError('Please make sure all fields are filled out properly.');
+            $form->addError('Zadajte aspoň email, prosím.');
         }
     }
 }

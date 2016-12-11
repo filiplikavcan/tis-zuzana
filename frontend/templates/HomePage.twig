@@ -25,12 +25,14 @@
             {% include 'components/Questions.twig' %}
         {% endif %}
 
-        {% include 'components/SupportForm.twig' with { Form: c.SupporterForm } %}
+        {% if c.SupporterForm.IsSubmitted and c.SupporterForm.IsSuccess %}
+            {% include 'components/SupportFormThankYou.twig' with { Form: c.SupporterForm }  %}
+        {% else %}
+            {% include 'components/SupportForm.twig' with { Form: c.SupporterForm } %}
+        {% endif %}
 
         {% if not c.SupporterForm.IsSubmitted %}
             {% include 'components/Goals.twig' %}
-        {% else %}
-            {% include 'components/SpreadTheWord.twig' %}
         {% endif %}
     </main>
 {% endblock %}

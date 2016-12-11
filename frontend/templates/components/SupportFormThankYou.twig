@@ -1,3 +1,10 @@
+<div class="panel prose">
+    <div class="text-column no-margin">
+        <h2>{{ Form.ThankYou.Title }}</h2>
+
+        {{ Form.ThankYou.Content|shortcodes }}
+    </div>
+</div>
 <div class="prose panel spread-the-word">
     <div class="text-column">
         <div class="prose">
@@ -15,11 +22,11 @@
 
             <div class="share-option">
                 <p>
-                    <a class="button" href="mailto:minister@huhu.sk?subject=Odpovedzte Zuzane&body={{ c.EmailTemplate|url_encode }}">Poslať email</a>
+                    <a class="button" href="mailto:miroslav.lajcak@mzv.sk?subject=Odpovedzte Zuzane&body={{ c.EmailTemplate|url_encode }}">Poslať email</a>
                 </p>
 
                 <p>
-                    Pošlite ministrovi email na adresu <code>minister@huhu.sk</code>. Ak sa Vám obsah emailu nepredvyplní po kliknutí na tlačidlo, môžete skopírovať nižšie uvedený text a poslať email ručne.
+                    Pošlite ministrovi email na adresu <code>miroslav.lajcak@mzv.sk</code>. Ak sa Vám obsah emailu nepredvyplní po kliknutí na tlačidlo, môžete skopírovať nižšie uvedený text a poslať email ručne.
                 </p>
             </div>
         </div>

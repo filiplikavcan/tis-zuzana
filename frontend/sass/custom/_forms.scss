@@ -4,6 +4,10 @@
 	padding-right: calc-rem(15);
 }
 
+.errors {
+	color: $orange-terra;
+}
+
 .support-form {
 	@include grid-row;
 
@@ -14,6 +18,21 @@
 	.text-field,
   .form-actions {
 		@include grid-column(12);
+	}
+
+	label.field-error {
+		color: $orange-terra;
+		span {
+			display: inline-block;
+			margin-left: 10px;
+		}
+	}
+
+	.field-error {
+		input,
+		select {
+			border-color: $orange-terra;
+		}
 	}
 
 	.form-actions {
@@ -86,6 +105,7 @@
 		}
 	}
   @include breakpoint(medium){
+    .form-errors,
     .check-field,
   	.email-field,
   	.form-actions,
@@ -110,6 +130,7 @@
     clear: none;
     }
 
+	.form-errors,
 	.check-field,
     .email-field {
       @include grid-col-size(12);
