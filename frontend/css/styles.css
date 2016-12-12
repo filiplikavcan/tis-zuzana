@@ -3660,6 +3660,11 @@ h2 {
   .panel.warm {
     background-color: #F6DEEA; }
 
+main {
+  min-height: 100vh;
+  padding-bottom: 130px;
+  margin-bottom: -130px; }
+
 .text-column {
   width: 100%;
   float: left;
