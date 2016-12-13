@@ -3934,11 +3934,10 @@ main {
 
 .hero-area {
   position: relative;
-  padding-top: 300px;
-  padding-bottom: 100px;
-  background-image: url("../assets/hero-image.jpg");
+  height: 100%;
+  background-image: url("../assets/hero-zuzana.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 70% center;
   background-size: cover; }
   .hero-area:before {
     content: "";
@@ -3949,14 +3948,21 @@ main {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); }
+  @media screen and (min-width: 40em) {
+    .hero-area {
+      height: 70%; } }
 
 .hero-content {
-  position: relative;
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  top: 55%;
   text-align: center;
-  color: white; }
+  color: white;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
   .hero-content::before, .hero-content::after {
     content: ' ';
     display: table; }
@@ -3987,6 +3993,8 @@ main {
 
 .topbar {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   text-align: right;
