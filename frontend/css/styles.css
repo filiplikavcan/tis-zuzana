@@ -3607,8 +3607,8 @@ h2 {
 
 @font-face {
   font-family: 'icon-font';
-  src: url("../assets/fonts/icon-font.eot?x66lhn");
-  src: url("../assets/fonts/icon-font.eot?x66lhn#iefix") format("embedded-opentype"), url("../assets/fonts/icon-font.ttf?x66lhn") format("truetype"), url("../assets/fonts/icon-font.woff?x66lhn") format("woff"), url("../assets/fonts/icon-font.svg?x66lhn#icon-font") format("svg");
+  src: url("../assets/fonts/icon-font.eot?5v275z");
+  src: url("../assets/fonts/icon-font.eot?5v275z#iefix") format("embedded-opentype"), url("../assets/fonts/icon-font.ttf?5v275z") format("truetype"), url("../assets/fonts/icon-font.woff?5v275z") format("woff"), url("../assets/fonts/icon-font.svg?5v275z#icon-font") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -3634,6 +3634,9 @@ h2 {
 
 .icon-twitter:before {
   content: ""; }
+
+.icon-linkedin:before {
+  content: ""; }
 
 .button {
   border: 0.125rem solid currentColor;
