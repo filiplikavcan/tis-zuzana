@@ -4556,7 +4556,8 @@ footer {
   background-color: #1D2B49;
   color: #fefefe; }
   footer .social-col,
-  footer .contact-col {
+  footer .contact-col,
+  footer .credits-col {
     width: 100%;
     float: left;
     padding-left: 0.625rem;
@@ -4564,18 +4565,47 @@ footer {
     text-align: center; }
     @media screen and (min-width: 40em) {
       footer .social-col,
-      footer .contact-col {
+      footer .contact-col,
+      footer .credits-col {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     footer .social-col:last-child:not(:first-child),
-    footer .contact-col:last-child:not(:first-child) {
+    footer .contact-col:last-child:not(:first-child),
+    footer .credits-col:last-child:not(:first-child) {
       float: right; }
   footer .contact-col {
     padding-top: 0.75rem; }
     footer .contact-col p {
       font-size: 0.875rem; }
+    @media screen and (min-width: 40em) {
+      footer .contact-col {
+        padding-top: 1.5rem; } }
   footer a {
     color: currentColor; }
+  footer .credits-col {
+    padding-top: 0.375rem;
+    padding-bottom: 0.75rem; }
+    footer .credits-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center; }
+    footer .credits-col a {
+      display: block;
+      padding: 0.1875rem 0;
+      font-size: 0.875rem; }
+      footer .credits-col a:active, footer .credits-col a:focus, footer .credits-col a:hover {
+        color: #fefefe;
+        text-decoration: underline; }
+    @media screen and (min-width: 40em) {
+      footer .credits-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0; }
+        footer .credits-col ul > li {
+          display: inline-block; }
+      footer .credits-col a {
+        padding: 0.25rem 0.75rem; } }
   footer .social-list {
     list-style: none;
     padding: 0;

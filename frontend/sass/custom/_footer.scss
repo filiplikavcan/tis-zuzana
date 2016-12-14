@@ -4,7 +4,8 @@ footer {
 	color: $white;
 
 	.social-col,
-  .contact-col {
+  .contact-col,
+	.credits-col {
 		@include grid-column(12);
     text-align: center;
 	}
@@ -13,10 +14,38 @@ footer {
     p{
       font-size: calc-rem(14);
     }
+		@include breakpoint(medium){
+			padding-top: calc-rem(24);
+		}
   }
 
 	a {
 		color: currentColor;
+	}
+	.credits-col {
+		padding-top: calc-rem(6);
+		padding-bottom: calc-rem(12);
+		ul {
+			@include reset-ul();
+			text-align: center;
+		}
+		a {
+			display: block;
+			padding: calc-rem(3 0);
+			font-size: calc-rem(14);
+			@include link-states {
+				color: $white;
+				text-decoration: underline;
+			}
+		}
+		@include breakpoint(medium){
+			ul {
+				@include reset-ul(true);
+			}
+			a {
+				padding: calc-rem(4 12);
+			}
+		}
 	}
 
 	.social-list {
