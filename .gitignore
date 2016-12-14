@@ -24,6 +24,4 @@ _ss_environment.php
 /cleopas/
 /googlesitemaps/
 /node_modules/
-/static/*
-!/static/html/
 
