@@ -4495,6 +4495,9 @@ main {
     .teasers-list .grid-sizer:last-child:not(:first-child),
     .teasers-list .grid-item:last-child:not(:first-child) {
       float: right; }
+    .teasers-list .grid-sizer:last-child:last-child:last-child,
+    .teasers-list .grid-item:last-child:last-child:last-child {
+      float: left; }
   @media screen and (min-width: 40em) {
     .teasers-list .grid-sizer,
     .teasers-list .grid-item {

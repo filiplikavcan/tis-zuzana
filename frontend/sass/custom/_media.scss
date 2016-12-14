@@ -32,6 +32,9 @@
   .grid-sizer,
   .grid-item {
     @include grid-column(12, $gutter: 0);
+    &:last-child {
+      @include grid-col-end();
+    }
   }
   @include breakpoint(medium){
     .grid-sizer,
