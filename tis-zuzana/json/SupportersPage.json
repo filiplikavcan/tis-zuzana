@@ -1,5 +1,8 @@
 {
-  "include": "'Page.json'",
+  "include": [
+    "'Page.json'",
+    "@Supporters"
+  ],
   "EmailTemplate": "getHomepage().EmailTemplate",
   "SupporterForm": {
     "include": "@Form:Supporter",
@@ -11,11 +14,14 @@
       "Content": "getHomepage().ThankYouContent"
     }
   },
-  "SupportersCount": "getSupportersCount()",
-  "Supporters from getSupporters()": [
-    {
-      "Name": "Name",
-      "Country": "getCountryName()"
-    }
-  ]
+  "VipSupporters": {
+    "Title": "VipSupportersTitle",
+    "Supporters from getVipSupporters()": [
+      {
+        "Title": "Title",
+        "Description": "Description",
+        "Link": "Link"
+      }
+    ]
+  }
 }

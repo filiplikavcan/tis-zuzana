@@ -3607,8 +3607,8 @@ h2 {
 
 @font-face {
   font-family: 'icon-font';
-  src: url("../assets/fonts/icon-font.eot?x66lhn");
-  src: url("../assets/fonts/icon-font.eot?x66lhn#iefix") format("embedded-opentype"), url("../assets/fonts/icon-font.ttf?x66lhn") format("truetype"), url("../assets/fonts/icon-font.woff?x66lhn") format("woff"), url("../assets/fonts/icon-font.svg?x66lhn#icon-font") format("svg");
+  src: url("../assets/fonts/icon-font.eot?5v275z");
+  src: url("../assets/fonts/icon-font.eot?5v275z#iefix") format("embedded-opentype"), url("../assets/fonts/icon-font.ttf?5v275z") format("truetype"), url("../assets/fonts/icon-font.woff?5v275z") format("woff"), url("../assets/fonts/icon-font.svg?5v275z#icon-font") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -3634,6 +3634,9 @@ h2 {
 
 .icon-twitter:before {
   content: ""; }
+
+.icon-linkedin:before {
+  content: ""; }
 
 .button {
   border: 0;
@@ -3731,6 +3734,22 @@ main {
   .media-column:last-child:not(:first-child) {
     float: right; }
 
+.more-column {
+  width: 100%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  text-align: center;
+  padding-top: 1.875rem;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem; }
+  @media screen and (min-width: 40em) {
+    .more-column {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  .more-column:last-child:not(:first-child) {
+    float: right; }
+
 .anchor {
   font-size: 1px;
   position: relative;
@@ -3786,6 +3805,9 @@ main {
     @media screen and (max-width: 39.9375em) {
       .support-form .button {
         width: 100%; } }
+  .support-form p.form-disclaimer {
+    font-size: 0.8125rem;
+    padding-top: 0.625rem; }
   .support-form label.field-error {
     color: #E1664E; }
     .support-form label.field-error span {
@@ -3988,16 +4010,11 @@ select {
 
 .hero-area {
   position: relative;
-  padding-top: 300px;
-  padding-bottom: 100px;
-  background-image: url("../assets/hero-image.jpg");
+  height: 100%;
+  background-image: url("../assets/hero-zuzana.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 70% center;
   background-size: cover; }
-  @media screen and (max-width: 39.9375em) {
-    .hero-area {
-      background-position: 64%;
-      padding-top: 230px; } }
   .hero-area h1 {
     font-weight: 300;
     font-size: 2.625rem; }
@@ -4013,14 +4030,21 @@ select {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); }
+  @media screen and (min-width: 40em) {
+    .hero-area {
+      height: 70%; } }
 
 .hero-content {
-  position: relative;
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  top: 55%;
   text-align: center;
-  color: white; }
+  color: white;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
   .hero-content::before, .hero-content::after {
     content: ' ';
     display: table; }
@@ -4037,20 +4061,11 @@ select {
         padding-right: 0.9375rem; } }
     .hero-content .content-column:last-child:not(:first-child) {
       float: right; }
-  @media screen and (min-width: 40em) {
-    .hero-content .content-column {
-      width: 83.33333%;
-      margin-left: auto;
-      margin-right: auto; }
-      .hero-content .content-column, .hero-content .content-column:last-child:not(:first-child) {
-        float: none;
-        clear: both; } }
-  @media screen and (min-width: 64em) {
-    .hero-content .content-column {
-      width: 75%; } }
 
 .topbar {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   text-align: right;
@@ -4568,6 +4583,9 @@ select {
     .teasers-list .grid-sizer:last-child:not(:first-child),
     .teasers-list .grid-item:last-child:not(:first-child) {
       float: right; }
+    .teasers-list .grid-sizer:last-child:last-child:last-child,
+    .teasers-list .grid-item:last-child:last-child:last-child {
+      float: left; }
   @media screen and (min-width: 40em) {
     .teasers-list .grid-sizer,
     .teasers-list .grid-item {
@@ -4623,7 +4641,8 @@ footer {
   background-color: #1D2B49;
   color: #fefefe; }
   footer .social-col,
-  footer .contact-col {
+  footer .contact-col,
+  footer .credits-col {
     width: 100%;
     float: left;
     padding-left: 0.625rem;
@@ -4631,18 +4650,47 @@ footer {
     text-align: center; }
     @media screen and (min-width: 40em) {
       footer .social-col,
-      footer .contact-col {
+      footer .contact-col,
+      footer .credits-col {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     footer .social-col:last-child:not(:first-child),
-    footer .contact-col:last-child:not(:first-child) {
+    footer .contact-col:last-child:not(:first-child),
+    footer .credits-col:last-child:not(:first-child) {
       float: right; }
   footer .contact-col {
     padding-top: 0.75rem; }
     footer .contact-col p {
       font-size: 0.875rem; }
+    @media screen and (min-width: 40em) {
+      footer .contact-col {
+        padding-top: 1.5rem; } }
   footer a {
     color: currentColor; }
+  footer .credits-col {
+    padding-top: 0.375rem;
+    padding-bottom: 0.75rem; }
+    footer .credits-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center; }
+    footer .credits-col a {
+      display: block;
+      padding: 0.1875rem 0;
+      font-size: 0.875rem; }
+      footer .credits-col a:active, footer .credits-col a:focus, footer .credits-col a:hover {
+        color: #fefefe;
+        text-decoration: underline; }
+    @media screen and (min-width: 40em) {
+      footer .credits-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0; }
+        footer .credits-col ul > li {
+          display: inline-block; }
+      footer .credits-col a {
+        padding: 0.25rem 0.75rem; } }
   footer .social-list {
     list-style: none;
     padding: 0;

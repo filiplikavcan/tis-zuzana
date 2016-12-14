@@ -4,7 +4,7 @@ global $project;
 $project = 'tis-zuzana';
 
 global $database;
-$database = 'tis-zuzana';
+$database = 'tis_zuzana';
 
 require_once('conf/ConfigureFromEnv.php');
 

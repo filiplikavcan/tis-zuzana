@@ -1,0 +1,24 @@
+{%  if Supporters|length > 0 %}
+    <div class="panel gray">
+        <div class="prose">
+            <div class="text-column">
+                <h2>{{ Title }}</h2>
+            </div>
+            <div class="signs-column">
+                <ul class="vip-list">
+                    {% for Supporter in Supporters %}
+                        <li>
+                            <p>
+                                {% if Supporter.Link %}<a href="{{ Supporter.Link }}" target="_blank">{% endif %}
+                                    <strong>{{ Supporter.Title }}</strong>
+                                    {% if Supporter.Link %}</a>{% endif %}
+
+                                {{ Supporter.Description ? ', ' ~ Supporter.Description : '' }}
+                            </p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endif %}

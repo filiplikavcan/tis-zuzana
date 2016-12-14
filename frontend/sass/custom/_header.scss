@@ -1,16 +1,11 @@
 .hero-area {
 	position: relative;
-	padding-top: 300px;
-	padding-bottom: 100px;
+	height: 100%;
 
-	background-image: url('../assets/hero-image.jpg');
+	background-image: url('../assets/hero-zuzana.jpg');
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: 70% center;
 	background-size: cover;
-	@include breakpoint(small only) {
-		background-position: 64%;
-		padding-top: 230px;
-	}
 
 	h1 {
 		font-weight: 300;
@@ -30,27 +25,21 @@
 		height: 100%;
 		background-color: rgba(0,0,0,0.5);
 	}
+	@include breakpoint(medium){
+		height: 70%;
+	}
 }
 
 .hero-content {
-	position: relative;
 	@include grid-row;
+	position: relative;
+	top: 55%;
 	text-align: center;
 	color: white;
+	transform: translateY(-50%);
 
 	.content-column {
 		@include grid-column(12);
-	}
-	@include breakpoint(medium) {
-		.content-column {
-			@include grid-col-size(10);
-			@include grid-col-pos(center);
-		}
-	}
-	@include breakpoint(large) {
-		.content-column {
-			@include grid-col-size(9);
-		}
 	}
 }
 
@@ -58,6 +47,8 @@
 // Topbar + Navigation
 .topbar {
 	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
 	background-color: rgba(white, 0.9);
 	text-align: right;

@@ -27,6 +27,11 @@
 		}
 	}
 
+	p.form-disclaimer {
+		font-size: calc-rem(13);
+		padding-top: calc-rem(10);
+	}
+
 	label.field-error {
 		color: $orange-terra;
 

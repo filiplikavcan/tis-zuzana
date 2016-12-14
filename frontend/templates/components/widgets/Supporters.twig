@@ -1,0 +1,21 @@
+<div class="panel">
+    <div class="prose">
+        <div class="text-column">
+            <h1>{{ Title }}</h1>
+            <div class="lead">
+                <p>Zuzanu doteraz podporilo <strong>{{ Count }}</strong> ľudí.</p>
+            </div>
+        </div>
+        <div class="signs-column">
+            <ul class="people-list">
+                {% for Supporter in Supporters %}
+                    <li data-id="{{ Supporter.ID }}"><p><strong>{{ Supporter.Name }}</strong>{% if Supporter.Country %}, {{ Supporter.Country }}{% endif %}</p></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="more-column">
+            <a href="{{ LoadMoreLink }}" class="button show-more-supporters" data-loading="Čakajte prosím. Nahrávam..." data-loaded="Zobraziť viac">Zobraziť viac</a>
+        </div>
+    </div>
+</div>

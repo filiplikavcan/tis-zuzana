@@ -49,6 +49,14 @@ main {
 	padding-right: rem-calc(15);
 }
 
+.more-column {
+	@include grid-column(12);
+	text-align: center;
+	padding-top: rem-calc(30);
+	padding-left: rem-calc(15);
+	padding-right: rem-calc(15);
+}
+
 .anchor {
 	font-size: 1px;
 	position: relative;
