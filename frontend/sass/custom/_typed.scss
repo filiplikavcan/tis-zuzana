@@ -41,7 +41,7 @@
   }
   @include breakpoint(large){
     p {
-      font-size: calc-rem(48);
+      font-size: calc-rem(38);
     }
     .typed-cursor {
       font-size: calc-rem(56)

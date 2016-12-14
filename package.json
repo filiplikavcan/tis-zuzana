@@ -35,6 +35,7 @@
     "del": "^2.0.2"
   },
   "devDependencies": {
+    "gulp-sass": "^2.3.2",
     "run-sequence": "^1.2.2"
   }
 }

@@ -14,14 +14,22 @@
 	.check-field,
 	.email-field,
 	.form-actions,
+	.form-actions,
 	.select-field,
-	.text-field,
-  .form-actions {
+	.text-field {
 		@include grid-column(12);
+	}
+
+	.button {
+		min-width: 14rem;
+		@include breakpoint(small only) {
+			width: 100%;
+		}
 	}
 
 	label.field-error {
 		color: $orange-terra;
+
 		span {
 			display: inline-block;
 			margin-left: 10px;
@@ -104,41 +112,68 @@
 			background-color: $blue-shakespeare;
 		}
 	}
-  @include breakpoint(medium){
-    .form-errors,
-    .check-field,
-  	.email-field,
-  	.form-actions,
-  	.select-field,
-  	.text-field,
-    .form-actions {
-      @include grid-col-size(7);
-      @include grid-col-pos(center);
-    }
-    .form-actions {
-  		padding-top: calc-rem(24);
-  	}
-  }
-  @include breakpoint(large){
-    max-width: calc-rem(700);
-  	.form-actions,
-  	.select-field,
-  	.text-field,
-    .form-actions {
-    @include grid-col-size(6);
-    @include grid-column-unposition;
-    clear: none;
-    }
+	@include breakpoint(medium) {
+		.check-field,
+		.email-field,
+		.form-actions,
+		.form-actions,
+		.form-errors,
+		.select-field,
+		.text-field {
+			@include grid-col-size(7);
+			@include grid-col-pos(center);
+		}
 
-	.form-errors,
-	.check-field,
-    .email-field {
-      @include grid-col-size(12);
-      // float: left;
-    }
-    .form-actions {
-      @include grid-col-size(12);
-  		padding-top: calc-rem(24);
-  	}
-  }
+		.form-actions {
+			padding-top: calc-rem(24);
+		}
+	}
+	@include breakpoint(large) {
+		max-width: calc-rem(700);
+
+		.form-actions,
+		.form-actions,
+		.select-field,
+		.text-field {
+			@include grid-col-size(6);
+			@include grid-column-unposition;
+			clear: none;
+		}
+
+		.check-field,
+		.email-field,
+		.form-errors {
+			@include grid-col-size(12);
+			// float: left;
+		}
+
+		.form-actions {
+			@include grid-col-size(12);
+			padding-top: calc-rem(24);
+		}
+	}
+}
+
+[type=color],
+[type=date],
+[type=datetime-local],
+[type=datetime],
+[type=email],
+[type=month],
+[type=number],
+[type=password],
+[type=search],
+[type=tel],
+[type=text],
+[type=time],
+[type=url],
+[type=week],
+textarea {
+	height: 3rem;
+	padding-left: 0.8rem;
+}
+
+select {
+	height: 3rem;
+	padding-left: 0.8rem;
 }
