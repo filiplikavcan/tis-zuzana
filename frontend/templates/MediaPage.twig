@@ -1,0 +1,37 @@
+{% extends "layouts/Page.twig" %}
+
+{% block content %}
+    <main>
+        <div class="panel">
+            <div class="prose">
+                <div class="text-column">
+                    <h1>{{ c.Title }}</h1>
+                    <div class="lead">
+                        {{ c.Content|raw }}
+                    </div>
+                </div>
+                <div class="media-column">
+                    <ul class="filter-list">
+                        {% for Category in c.Media.Categories %}
+                            <li{% if Category.IsActive %} class="active"{% endif %}><a href="{{ Category.Link }}"><span>{{ Category.Title }}</span></a></li>
+                        {% endfor %}
+                    </ul>
+                    <ul class="teasers-list">
+                        <li class="grid-sizer"></li>
+                        {% for Item in c.Media.Items %}
+                            <li class="grid-item">
+                                <a class="teaser" href="{{ Item.Link }}" target="_blank">
+                                    {% if Item.Image.Exists %}<img src="{{ Item.Image.Link }}" alt="{{ Item.Title }}">{% endif %}
+                                    <div class="teaser-content">
+                                        <h2>{{ Item.Title }}</h2>
+                                        {% if Item.Description %}<p>{{ Item.Description }}</p>{% endif %}
+                                    </div>
+                                </a>
+                            </li>
+                       {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

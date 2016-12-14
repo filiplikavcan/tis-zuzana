@@ -7,6 +7,16 @@
     background-color: $blue-shakespeare;
     border-color: $blue-shakespeare;
   }
+
+  &.disabled {
+    @include link-states{
+      opacity: 1;
+      background-color: white;
+      color: $blue-shakespeare;
+      border-color: white;
+    }
+  }
+
   &:focus{
     border-color: darken($blue-shakespeare, 20%);
   }

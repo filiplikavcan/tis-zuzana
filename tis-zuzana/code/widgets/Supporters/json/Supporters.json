@@ -1,0 +1,15 @@
+{
+  "Supporters": {
+    "Title": "getTitle()",
+    "LoadMoreLink": "getUrl()",
+    "Count": "getAllSupportersCount()",
+    "PageSize": "getPageSize()",
+    "Supporters from getSupporters()": [
+      {
+        "ID": "ConfirmationID",
+        "Name": "Name",
+        "Country": "getCountryName()"
+      }
+    ]
+  }
+}

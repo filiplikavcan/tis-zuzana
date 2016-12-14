@@ -37,9 +37,14 @@
             <fieldset class="check-field">
                 {{ f.input(FormFields.Show) }}
                 {{ f.label(FormFields.Show) }}
+
+                <p class="form-disclaimer">
+                    O ďalšom vývoji výzvy Vás budeme ďalej informovať pomocou emailu. Ak si informácie neželáte dostávať, zasielanie sa dá jednorázovo zrušiť v každej správe.
+                </p>
+
             </fieldset>
             <div class="form-actions">
-                {#Odoslaním formulára súhlasíte so spraovaním osobných údajov bla bla. Vo verejnom zozname bude zverejnené iba Vaše meno a priezvisko.#}
+
 
                 {{ f.input(FormFields._submit, { class: 'button' } ) }}
             </div>

@@ -46,11 +46,14 @@
 {% endblock %}
 
 {% block js %}
+    {% set DaysMessage = c.Counter.Days > 0 ? (c.Counter.Days ~ (c.Counter.Days == 1 ? ' deň' : (c.Counter.Days < 5 ? ' dni' : ' dní'))) : '' %}
+    {% set HoursMessage =  c.Counter.Hours > 0 ? (c.Counter.Hours ~ (c.Counter.Hours == 1 ? ' hodina' : (c.Counter.Hours < 5 ? ' hodiny' : ' hodín'))) : '' %}
+
     <script>
         $(function(){
             $(".counter p").typed({
                 strings: [
-                    "Do konca výzvy zostáva <strong>{{ c.Counter.Days }} {{ c.Counter.Days == 1 ? 'deň' : (c.Counter.Days < 5 ? 'dni' : 'dní') }}</strong>.",
+                    {% if DaysMessage or HoursMessage %}"Do konca výzvy zostáva <strong>{{ DaysMessage }}{{ DaysMessage and HoursMessage ? ' a ' : '' }}{{ HoursMessage }}</strong>.",{% endif %}
                     {% if c.Counter.Supporters > 5000 %}"Už <strong>{{ c.Counter.Supporters }} ľudí</strong> podporilo Zuzanu.",{% endif %}
                     "Minister odpovedal na <strong>{{ c.Counter.Answers }} {{ c.Counter.Days == 1 ? 'otázku' : (c.Counter.Days < 5 ? 'otázky' : 'otázok') }}!</strong>"],
                 typeSpeed: 0,

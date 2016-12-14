@@ -1,29 +1,81 @@
 jQuery( document ).ready(function( $ ) {
-  $('.topbar').on('click', '.js-open-menu', function(event){
-    event.preventDefault();
-    $(this).parent().next('.nav-wrapper').addClass('is-opened');
-  });
-  $('.topbar').on('click', '.js-close-menu', function(event){
-    event.preventDefault();
-    $(this).parent().removeClass('is-opened');
-  });
-  $('input[name=Country]').each(function(){
-      var input = $(this);
 
-      var select = $('<select name="Country"></select>');
+    var last_supporter_id = $('.people-list li:last').data('id');
 
-      $.each(COUNTRIES.sk, function(code, name) {
-          select.append('<option value="' + code + '"' + (code == 'SK' ? ' selected="selected"' : '') + '>' + name + '</option>');
-      });
+    function loadSupporters()
+    {
+        var button = $(this);
 
-      input.replaceWith(select);
-  });
-  if(!$("#teasers-list").length){
-    return;
-  }
-  $('.teasers-list').masonry({
-  // options
-    itemSelector: '.grid-item',
-    columnWidth: '.grid-sizer'
-  });
+        if (!button.hasClass('disabled'))
+        {
+            button.addClass('disabled').text(button.data('loading'));
+
+            $.getJSON(button.attr('href'), { i: last_supporter_id }).always(function(response) {
+                button.attr('href', response.Supporters.LoadMoreLink);
+                button.removeClass('disabled').text(button.data('loaded'));
+
+                var count = response.Supporters.Supporters.length;
+
+                if (count < response.Supporters.PageSize)
+                {
+                    button.remove();
+                }
+
+                if (count > 0)
+                {
+                    var last_id, html, list = $('.people-list:first');
+
+                    $.each(response.Supporters.Supporters, function(i, supporter) {
+                        html = '<li><p><strong>' + supporter.Name + '</strong>';
+
+                        if (supporter.Country)
+                        {
+                            html += ', ' + supporter.Country;
+                        }
+
+                        last_supporter_id = supporter.ID;
+
+                        list.append(html);
+                    });
+                }
+            });
+        }
+    }
+
+    $('body')
+        .on('click', '.js-open-menu', function(event){
+            event.preventDefault();
+            $(this).parent().next('.nav-wrapper').addClass('is-opened');
+        })
+        .on('click', '.js-close-menu', function(event){
+            event.preventDefault();
+            $(this).parent().removeClass('is-opened');
+        }).on('click', '.show-more-supporters', function(event) {
+            event.preventDefault();
+            loadSupporters.call(this);
+        });
+
+    $('input[name=Country]').each(function(){
+        var input = $(this);
+        var value = input.val();
+
+        var select = $('<select name="Country"></select>');
+
+        $.each(COUNTRIES.sk, function(code, name) {
+            select.append('<option value="' + code + '"' + (code == value ? ' selected="selected"' : '') + '>' + name + '</option>');
+        });
+
+        input.replaceWith(select);
+    });
+
+    if(!$("#teasers-list").length)
+    {
+        return;
+    }
+
+    $('.teasers-list').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer'
+    });
 });

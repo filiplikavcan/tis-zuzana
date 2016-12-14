@@ -16,7 +16,8 @@
     }
   },
   "Counter from getCounter()": {
-    "Days": "Days",
+    "Days": "Time[days]",
+    "Hours": "Time[hours]",
     "Supporters": "Supporters",
     "Answers": "Answers"
   },
