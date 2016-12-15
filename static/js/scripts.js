@@ -115,7 +115,7 @@ function main($)
 		input.replaceWith(select);
 	});
 
-	if ($("#teasers-list").length > 0)
+	if ($(".teasers-list").length > 0)
 	{
         $('.teasers-list').masonry({
             // options
