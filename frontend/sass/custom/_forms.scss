@@ -51,6 +51,11 @@
 	.form-actions {
 		padding-top: calc-rem(12);
 		text-align: center;
+
+		&>input[type="button"] {
+			margin-top: 33px;
+		}
+
 	}
 
 	label {
