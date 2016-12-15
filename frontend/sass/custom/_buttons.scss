@@ -1,23 +1,65 @@
 .button {
-  border: calc-rem(2) solid currentColor;
-  font-weight: 700;
-  @include ps-transition(border-color, color, background-color);
-  @include link-states{
-    color: $white;
-    background-color: $blue-shakespeare;
-    border-color: $blue-shakespeare;
-  }
+// <<<<<<< HEAD
+	border: 0;
+	font-weight: 700;
+	padding: 1.2em;
+	background: $blue-shakespeare;
+	color: $white;
+	font-size: 1.2rem;
+	@include ps-transition(border-color, color, background-color);
+	@include link-states {
+		color: $white;
+		background-color: lighten($blue-shakespeare, 10%);
+		border-color: lighten($blue-shakespeare, 10%);
+	}
 
-  &.disabled {
-    @include link-states{
-      opacity: 1;
-      background-color: white;
-      color: $blue-shakespeare;
-      border-color: white;
-    }
-  }
+	&:focus {
+		border-color: darken($blue-shakespeare, 20%);
+	}
+	@include breakpoint(small) {
+		white-space: normal;
+	}
+}
 
-  &:focus{
-    border-color: darken($blue-shakespeare, 20%);
-  }
+.button-absolute {
+	position: relative;
+	padding-left: 3.5rem;
+
+	img {
+		position: absolute;
+		top: 50%;
+		left: 1.8rem;
+		transform: translateY(-50%);
+	}
+}
+
+.button-fb {
+	background: $blue-facebook;
+
+	&:hover {
+		background: lighten($blue-facebook, 8%);
+	}
+// =======
+//   border: calc-rem(2) solid currentColor;
+//   font-weight: 700;
+//   @include ps-transition(border-color, color, background-color);
+//   @include link-states{
+//     color: $white;
+//     background-color: $blue-shakespeare;
+//     border-color: $blue-shakespeare;
+//   }
+//
+//   &.disabled {
+//     @include link-states{
+//       opacity: 1;
+//       background-color: white;
+//       color: $blue-shakespeare;
+//       border-color: white;
+//     }
+//   }
+//
+//   &:focus{
+//     border-color: darken($blue-shakespeare, 20%);
+//   }
+// >>>>>>> master
 }

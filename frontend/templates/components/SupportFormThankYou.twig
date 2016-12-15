@@ -5,7 +5,7 @@
             <div class="lead">
                 {{ Form.ThankYou.Content|shortcodes }}
             </div>
-            <a class="button" target="_blank" href="https://www.facebook.com/sharer.php?title={{ 'Odpovedzte Zuzane'|url_encode }}&description={{ 'Podporujem Zuzanu a chcem, aby minister Lajčák odpovedal na dôležité otázky, ktoré sa pýta.'|url_encode }}&u=http%3A%2F%2Fodpovedztezuzane.sk">Zazdieľaj na Facebooku</a>
+            <a class="button button-absolute button-fb" target="_blank" href="https://www.facebook.com/sharer.php?title={{ 'Odpovedzte Zuzane'|url_encode }}&description={{ 'Podporujem Zuzanu a chcem, aby minister Lajčák odpovedal na dôležité otázky, ktoré sa pýta.'|url_encode }}&u=http%3A%2F%2Fodpovedztezuzane.sk"><img src="/static/assets/icons/facebook-white-small.svg" alt="" />Zazdieľaj na Facebooku</a>
             <a class="button" href="mailto:miroslav.lajcak@mzv.sk?subject=Odpovedzte Zuzane&body={{ c.EmailTemplate|url_encode }}">Pošli mail</a>
             <div class="mail-content">
                 {{ c.EmailTemplate|nl2br }}

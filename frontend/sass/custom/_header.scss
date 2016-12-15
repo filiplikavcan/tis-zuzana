@@ -7,6 +7,14 @@
 	background-position: 70% center;
 	background-size: cover;
 
+	h1 {
+		font-weight: 300;
+		font-size: calc-rem(42);
+		@include breakpoint(small only) {
+			font-size: calc-rem(30);
+		}
+	}
+
 	&:before {
 		content: "";
 		position: absolute;
@@ -44,8 +52,9 @@
 	width: 100%;
 	background-color: rgba(white, 0.9);
 	text-align: right;
-  box-shadow: calc-rem(0 0 14 0) rgba(0, 0, 0, 0.1);
+	box-shadow: calc-rem(0 0 14 0) rgba(0, 0, 0, 0.1);
 	z-index: 10;
+	top: 0;
 
 	.logo {
 		@include grid-column(6);
@@ -69,9 +78,10 @@
 		font-weight: 700;
 	}
 	@include breakpoint(large) {
-    .logo {
-      width: calc-rem(150);
-    }
+		.logo {
+			width: calc-rem(150);
+		}
+
 		.actions {
 			display: none;
 		}
@@ -107,16 +117,15 @@
 			box-shadow: rem-calc(0 2 0 0) $transparent;
 			@include ps-transition(box-shadow);
 		}
-
 		@include link-states {
 			span {
 				box-shadow: rem-calc(0 2 0 0) currentColor;
 			}
 		}
 
-    &.active span{
-      box-shadow: rem-calc(0 2 0 0) currentColor;
-    }
+		&.active span {
+			box-shadow: rem-calc(0 2 0 0) currentColor;
+		}
 
 		&.close-menu {
 			position: absolute;
@@ -125,20 +134,21 @@
 			padding: calc-rem(12);
 		}
 	}
-  @include breakpoint(large) {
-    position: static;
-  	top: auto;
-  	left: auto;
-  	height: auto;
-  	padding: 0;
-  	background-color: $transparent;
-  	transform: none;
-    @include grid-column(12);
-    width: calc(100% - 150px);
-    a.close-menu {
-      display: none;
-    }
-  }
+	@include breakpoint(large) {
+		position: static;
+		top: auto;
+		left: auto;
+		height: auto;
+		padding: 0;
+		background-color: $transparent;
+		transform: none;
+		@include grid-column(12);
+		width: calc(100% - 150px);
+
+		a.close-menu {
+			display: none;
+		}
+	}
 }
 
 .menu-main {
@@ -159,8 +169,8 @@
 		padding: 0;
 		background-color: transparent;
 		transform: none;
-    @include grid-column(12);
-    width: calc(100% - 150px);
+		@include grid-column(12);
+		width: calc(100% - 150px);
 
 		a.close-menu {
 			display: none;
@@ -186,12 +196,12 @@
 	left: 0;
 	width: 100%;
 	text-align: center;
-  @include breakpoint(large){
-    position: static;;
-  	bottom: auto;
-  	left: auto;
-    @include grid-column(1, $gutter:0);
-    width: calc-rem(150);
-    text-align: right;
-  }
+	@include breakpoint(large) {
+		position: static;
+		bottom: auto;
+		left: auto;
+		@include grid-column(1, $gutter:0);
+		width: calc-rem(150);
+		text-align: right;
+	}
 }

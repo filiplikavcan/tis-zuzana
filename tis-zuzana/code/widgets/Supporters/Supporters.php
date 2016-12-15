@@ -7,6 +7,7 @@ use Cleopas\Widgets\Widget;
 
 class Supporters extends Widget implements IRequestable
 {
+    const TWO_HOURS_IN_SECONDS = 7200;
     protected $is_data_cached = false;
 
     protected $page_size = 100;
@@ -19,11 +20,22 @@ class Supporters extends Widget implements IRequestable
 
     public function getSupporters()
     {
-        return \Supporter::confirmed()
-            ->filter(array('ConfirmationID:LessThan' => $this->getLastConfirmationID()))
+        $suporters = \Supporter::confirmed()
             ->where('Name IS NOT NULL AND `Show` = 1')
-            ->sort('ConfirmationID DESC')
             ->limit($this->page_size);
+
+        if ($this->param('for_hp', 'false') == 'true')
+        {
+            return $suporters
+                ->filter(array('LastEdited:LessThan' => date('Y-m-d H:i:s', time() - self::TWO_HOURS_IN_SECONDS)))
+                ->sort('RAND()');
+        }
+        else
+        {
+            return $suporters
+                ->filter(array('ConfirmationID:LessThan' => $this->getLastConfirmationID()))
+                ->sort('ConfirmationID DESC');
+        }
     }
 
     public function getTitle()
@@ -46,10 +58,5 @@ class Supporters extends Widget implements IRequestable
     protected function getLastConfirmationID()
     {
         return $this->param('i', PHP_INT_MAX);
-    }
-
-    public function getUrl()
-    {
-        return parent::getUrl();
     }
 }

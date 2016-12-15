@@ -3,6 +3,10 @@
 .prose {
 	@include grid-row;
 	margin-top: rem-calc(20);
+
+	&.next-steps {
+		text-align: center;
+	}
 }
 
 // Points list
@@ -22,9 +26,9 @@
 		margin-bottom: rem-calc(24);
 	}
 	@include breakpoint(medium) {
-		@include grid-col-size(10);
+		 @include grid-col-size(10);
 		@include grid-col-pos(center);
-		 @include grid-layout($n: 2, $selector: "li");
+		@include grid-layout($n: 2, $selector: "li");
 
 		h2 {
 			margin-bottom: rem-calc(36);
@@ -36,7 +40,7 @@
 		}
 	}
 	@include breakpoint(large) {
-		@include grid-col-size(8);
+		 @include grid-col-size(8);
 		margin-bottom: calc-rem(24);
 	}
 }
@@ -57,8 +61,9 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	&:before,
-	&:after {
+
+	&:after,
+	&:before {
 		content: "";
 		position: absolute;
 		top: 50%;
@@ -71,6 +76,7 @@
 		border-radius: 50%;
 		transform: translateX(-50%) translateY(-50%);
 	}
+
 	&:after {
 		width: 0;
 		height: 0;
@@ -80,11 +86,11 @@
 		border-color: transparent transparent transparent currentColor;
 		transform: translateX(-40%) translateY(-50%);
 	}
-	@include breakpoint(medium){
+	@include breakpoint(medium) {
 		max-width: calc-rem(500);
 		height: calc-rem(260);
 	}
-	@include breakpoint(large){
+	@include breakpoint(large) {
 		max-width: calc-rem(500);
 		height: calc-rem(280);
 	}
@@ -92,25 +98,38 @@
 
 .questions-list {
 	@include reset-ul(true);
+
 	li {
 		@include grid-column(12);
 		margin-bottom: calc-rem(12);
+
 		p:first-child {
 			margin-bottom: calc-rem(6);
 		}
 	}
+
 	strong {
 		font-size: calc-rem(20);
 		font-style: italic;
 		font-weight: 500;
 	}
-
-	@include breakpoint(medium){
+	@include breakpoint(medium) {
 		max-width: calc-rem(700);
 		margin: 0 auto;
+
 		li {
-		@include grid-col-size(12);
+			@include grid-col-size(12);
 		}
+	}
+}
+
+.questions-list-item {
+	margin-bottom: 3rem;
+}
+
+#questions {
+	@include breakpoint(small only) {
+		text-align: center;
 	}
 }
 
@@ -120,10 +139,12 @@
 	margin: calc-rem(12) auto;
 	text-align: left;
 	counter-reset: li-counter;
+
 	li {
 		position: relative;
 		padding-left: calc-rem(30);
-		&:before{
+
+		&:before {
 			counter-increment: li-counter;
 			content: counter(li-counter) ".";
 			position: absolute;
@@ -135,9 +156,15 @@
 			font-weight: 700;
 		}
 	}
-	p:first-child{
+
+	div {
+		margin-bottom: calc-rem(16);
+	}
+
+	p:first-child {
 		margin-bottom: 0;
 	}
+
 	strong {
 		font-size: calc-rem(20);
 	}
@@ -148,14 +175,22 @@
 	@include grid-layout($n: 1, $selector: "li");
 	padding: calc-rem(6);
 	text-align: center;
+
 	p {
 		margin-bottom: 0;
+		font-size: 1rem;
 	}
-	@include breakpoint(medium){
-		@include grid-layout($n: 2, $selector: "li");
+	@include breakpoint(medium) {
+		 @include grid-layout($n: 2, $selector: "li");
 	}
-	@include breakpoint(large){
-		@include grid-layout($n: 4, $selector: "li");
+	@include breakpoint(large) {
+		 @include grid-layout($n: 4, $selector: "li");
+	}
+
+	& > li {
+		@include breakpoint(medium) {
+			text-align: left;
+		}
 	}
 }
 
@@ -164,16 +199,23 @@
 	@include grid-layout($n: 1, $selector: "li");
 	padding: calc-rem(6);
 	text-align: center;
+
 	p {
 		margin-bottom: 0;
 		font-size: calc-rem(20);
 	}
-	@include breakpoint(medium){
-		@include grid-layout($n: 2, $selector: "li");
+	@include breakpoint(medium) {
+		 @include grid-layout($n: 2, $selector: "li");
 		padding: calc-rem(8);
 	}
-	@include breakpoint(large){
-		@include grid-layout($n: 3, $selector: "li");
+	@include breakpoint(large) {
+		 @include grid-layout($n: 3, $selector: "li");
+	}
+
+	& > li {
+		@include breakpoint(medium) {
+			text-align: left;
+		}
 	}
 }
 
@@ -181,6 +223,7 @@
 	ul {
 		@include reset-ul(true);
 		padding-top: calc-rem(12);
+
 		a {
 			display: block;
 			padding: calc-rem(6 0 2);
@@ -188,10 +231,26 @@
 			color: $blue-shakespeare;
 			font-weight: 400;
 			box-shadow: calc-rem(0 2 0 0) $transparent;
+			text-transform: uppercase;
 			@include ps-transition(box-shadow);
-			@include link-states{
+			@include link-states {
 				box-shadow: calc-rem(0 2 0 0) currentColor;
 			}
 		}
+	}
+}
+
+.external-link {
+	margin-left: 5px;
+	position: relative;
+	top: -1px;
+	opacity: 0.5;
+}
+
+.panel-support {
+	background: #1D2B49;
+	color: #ffffff;
+	label{
+		color: #ffffff;
 	}
 }

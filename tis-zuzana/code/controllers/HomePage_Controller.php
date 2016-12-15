@@ -19,6 +19,8 @@ class HomePage_Controller extends Page_Controller
         $this->addWidget('EmailConfirmation', Cleopas\Widgets\Data\Data::create()
             ->IsInvoked(false)
             ->IsSuccess(false));
+
+        $this->addWidget('Supporters', TisZuzana\Widgets\Supporters\Supporters::create());
     }
 
     protected function setupForms()
@@ -63,5 +65,10 @@ class HomePage_Controller extends Page_Controller
     public function getEmailConfirmation()
     {
         return $this->getWidget('EmailConfirmation');
+    }
+
+    public function getSupportersUrl()
+    {
+        return $this->getWidget('Supporters')->getUrl();
     }
 }
