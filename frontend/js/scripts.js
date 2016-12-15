@@ -51,8 +51,34 @@ jQuery(document).ready(function($) {
 			event.preventDefault();
 			loadSupporters.call(this);
 		}).on('click', '.menu-main a', function(){
-      $(this).closest('.nav-wrapper').removeClass('is-opened');
-    });
+		  $(this).closest('.nav-wrapper').removeClass('is-opened');
+		})
+        .on('click', "a[href*='youtube']", function (e) {
+            e.preventDefault();
+            lity($(this).attr('href'));
+        });
+
+	$('.counter').each(function() {
+		var counter = $(this);
+
+        $.getJSON(counter.data('url'), { for_hp: 'true' }).always(function(response) {
+            counter.css({
+            	visibility: 'visible'
+			});
+
+			var strings = $.map(response.Supporters.Supporters, function(supporter) {
+                return '<strong>' + supporter.Name + '</strong>';
+			});
+
+            $(".counter span").typed({
+                strings: strings,
+                typeSpeed: 0,
+                loop: true,
+                backDelay: 2000,
+                backSpeed: -50
+            });
+        });
+	});
 
 	$('input[name=Country]').each(function() {
 		var input = $(this);

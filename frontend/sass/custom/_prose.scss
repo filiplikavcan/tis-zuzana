@@ -157,6 +157,10 @@
 		}
 	}
 
+	div {
+		margin-bottom: calc-rem(16);
+	}
+
 	p:first-child {
 		margin-bottom: 0;
 	}

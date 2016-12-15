@@ -11,7 +11,7 @@
         {% if c.SupporterForm.IsSubmitted and c.SupporterForm.IsSuccess %}
             {% include 'components/SupportFormThankYou.twig' with { Form: c.SupporterForm }  %}
         {% else %}
-            {% include 'components/SupportForm.twig' with { Form: c.SupporterForm } %}
+            {% include 'components/SupportForm.twig' with { Form: c.SupporterForm, DisableBlue: true } %}
         {% endif %}
     </main>
 {% endblock %}

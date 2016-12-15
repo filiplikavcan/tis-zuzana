@@ -7,7 +7,7 @@ footer {
   .contact-col,
 	.credits-col {
 		@include grid-column(12);
-    text-align: center;
+    	text-align: center;
 	}
   .contact-col {
     padding-top: calc-rem(12);
@@ -25,14 +25,22 @@ footer {
 	.credits-col {
 		padding-top: calc-rem(6);
 		padding-bottom: calc-rem(12);
+		font-size: calc-rem(14);
+
 		ul {
 			@include reset-ul();
 			text-align: center;
 		}
+
+		li {
+			padding: calc-rem(3 0);
+			color: transparentize($white, 0.6);
+		}
+
 		a {
 			display: block;
-			padding: calc-rem(3 0);
 			font-size: calc-rem(14);
+
 			@include link-states {
 				color: $white;
 				text-decoration: underline;
@@ -42,7 +50,7 @@ footer {
 			ul {
 				@include reset-ul(true);
 			}
-			a {
+			li {
 				padding: calc-rem(4 12);
 			}
 		}

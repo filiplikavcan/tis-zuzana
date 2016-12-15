@@ -1,53 +1,50 @@
 {% set FormFields = Form.Fields|map('Name') %}
 
-<div class="panel">
+<div class="panel{% if not Form.Errors and not DisableBlue %} panel-support{% endif %}">
     <span class="anchor" id="{{ Form.Hash }}"></span>
-    <div class="prose">
-        <div class="text-column no-margin">
-            {% if Form.Errors %}
-                <div class="errors">
-                    <h2>Ups, ešte niečo chýba</h2>
-                    {{ f.errors(Form) }}
-                </div>
-            {% else %}
-                <h2>{{ Form.Title }}</h2>
+    <div class="text-column no-margin">
+        {% if Form.Errors %}
+            <div class="errors">
+                <h2>Ups, ešte niečo chýba</h2>
+                {{ f.errors(Form) }}
+            </div>
+        {% else %}
+            <h2>{{ Form.Title }}</h2>
 
-                {{ Form.Content|shortcodes }}
-            {% endif %}
+            {{ Form.Content|shortcodes }}
+        {% endif %}
+    </div>
+
+    {{ f.begin(Form, FormFields, { class: "support-form" }) }}
+        <div class="text-field">
+            {{ f.label(FormFields.Email) }}
+            {{ f.input(FormFields.Email) }}
         </div>
-    </div>
-    <div class="form-wrapper">
-        {{ f.begin(Form, FormFields, { class: "support-form" }) }}
-            <div class="text-field">
-                {{ f.label(FormFields.Email) }}
-                {{ f.input(FormFields.Email) }}
-            </div>
-            <div class="text-field">
-                {{ f.label(FormFields.Name) }}
-                {{ f.input(FormFields.Name) }}
-            </div>
-            <div class="select-field">
-                {{ f.label(FormFields.Country) }}
-                {{ f.input(FormFields.Country) }}
-            </div>
-            <div class="text-field">
-                {{ f.label(FormFields.City) }}
-                {{ f.input(FormFields.City) }}
-            </div>
-            <fieldset class="check-field">
-                {{ f.input(FormFields.Show) }}
-                {{ f.label(FormFields.Show) }}
+        <div class="text-field">
+            {{ f.label(FormFields.Name) }}
+            {{ f.input(FormFields.Name) }}
+        </div>
+        <div class="select-field">
+            {{ f.label(FormFields.Country) }}
+            {{ f.input(FormFields.Country) }}
+        </div>
+        <div class="text-field">
+            {{ f.label(FormFields.City) }}
+            {{ f.input(FormFields.City) }}
+        </div>
+        <fieldset class="check-field">
+            {{ f.input(FormFields.Show) }}
+            {{ f.label(FormFields.Show) }}
 
-                <p class="form-disclaimer">
-                    O ďalšom vývoji výzvy Vás budeme ďalej informovať pomocou emailu. Ak si informácie neželáte dostávať, zasielanie sa dá jednorázovo zrušiť v každej správe.
-                </p>
+            <p class="form-disclaimer">
+                O ďalšom vývoji výzvy Vás budeme ďalej informovať pomocou emailu. Ak si informácie neželáte dostávať, zasielanie sa dá jednorázovo zrušiť v každej správe.
+            </p>
 
-            </fieldset>
-            <div class="form-actions">
+        </fieldset>
+        <div class="form-actions">
 
 
-                {{ f.input(FormFields._submit, { class: 'button' } ) }}
-            </div>
-        {{ f.end() }}
-    </div>
+            {{ f.input(FormFields._submit, { class: 'button' } ) }}
+        </div>
+    {{ f.end() }}
 </div>

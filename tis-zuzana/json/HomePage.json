@@ -1,6 +1,7 @@
 {
   "include": "'Page.json'",
   "EmailTemplate": "EmailTemplate",
+  "SupportersUrl": "getSupportersUrl()",
   "EmailConfirmation from getEmailConfirmation()": {
     "IsInvoked": "IsInvoked",
     "IsSuccess": "IsSuccess"
