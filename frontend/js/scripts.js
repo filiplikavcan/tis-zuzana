@@ -1,5 +1,5 @@
-jQuery(document).ready(function($) {
-
+function main($)
+{
 	var last_supporter_id = $('.people-list li:last').data('id');
 
 	function loadSupporters() {
@@ -97,13 +97,31 @@ jQuery(document).ready(function($) {
 		input.replaceWith(select);
 	});
 
-	if(!$("#teasers-list").length) {
-		return;
+	if ($("#teasers-list").length > 0)
+	{
+        $('.teasers-list').masonry({
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-sizer'
+        });
 	}
+}
 
-	$('.teasers-list').masonry({
-		// options
-		itemSelector: '.grid-item',
-		columnWidth: '.grid-sizer'
-	});
-});
+(function() {
+    var INVOKE = true;
+    var init;
+    jQuery((init = function(documentready)
+    {
+        if (INVOKE)
+        {
+            main(jQuery);
+
+            INVOKE = !documentready;
+        }
+        else
+        {
+            INVOKE = true;
+        }
+    }).bind(window, true));
+    document.addEventListener("turbolinks:load", init.bind(window, false));
+})();

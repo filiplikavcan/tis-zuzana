@@ -25,5 +25,6 @@ _ss_environment.php
 /googlesitemaps/
 /node_modules/
 /images/
+/html-cache/
 
 .DS_Store
