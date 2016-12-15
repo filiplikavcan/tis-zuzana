@@ -4485,7 +4485,9 @@ select {
       .people-list > li:nth-of-type(2n+1) {
         clear: both; }
       .people-list > li:last-child {
-        float: left; } }
+        float: left; }
+    .people-list li {
+      padding: 0.125rem 0.3125rem; } }
   @media screen and (min-width: 64em) {
     .people-list > li {
       width: 25%;
@@ -4529,7 +4531,9 @@ select {
         .vip-list > li:nth-of-type(2n+1) {
           clear: both; }
         .vip-list > li:last-child {
-          float: left; } }
+          float: left; }
+      .vip-list li {
+        padding: 0.125rem 0.3125rem; } }
   @media screen and (min-width: 64em) {
     .vip-list > li {
       width: 33.33333%;
