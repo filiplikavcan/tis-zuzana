@@ -27,3 +27,4 @@ _ss_environment.php
 /static/*
 !/static/html/
 
+.DS_Store
