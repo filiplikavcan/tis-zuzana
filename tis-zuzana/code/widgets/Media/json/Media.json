@@ -15,7 +15,7 @@
         "Link": "Link",
         "Image": {
           "Exists": "Image().ID",
-          "Link": "Image().Url"
+          "Link": "getImageUrl()"
         }
       }
     ]

@@ -26,4 +26,9 @@ class Media extends DataObject
 
         return $fields;
     }
+
+    public function getImageUrl()
+    {
+        return $this->Image()->getModifiedLink(array('w' => 500));
+    }
 }
