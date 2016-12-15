@@ -12,7 +12,7 @@ class SupporterFormFactory extends BaseFormFactory
         $form->addText('City', 'Mesto');
         $form->addText('Country', 'Krajina')
             ->setDefaultValue('SK');
-        $form->addCheckbox('Show', 'Súhlasím, so zverejnením mena a krajiny v zozname signatárov')
+        $form->addCheckbox('Show', 'Súhlasím so zverejnením mena a krajiny v zozname signatárov')
             ->setDefaultValue(true);
 
         $submit = $form->addSubmit('submit', 'Odoslať');
