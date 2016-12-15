@@ -42,7 +42,16 @@ ErrorDocument 500 /assets/error-500.html
 
 	# Enable HTTP Basic authentication workaround for PHP running in CGI mode
 	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-	
+
+    RewriteCond %{REQUEST_URI} !^/images/it-.*$
+    RewriteCond %{REQUEST_URI} ^/images(.*)$
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule .* %1 [QSA,L]
+
+    RewriteCond %{REQUEST_URI} ^/images(.*)$
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule .* image.php?url=%1 [QSA,L]
+
 	# Deny access to potentially sensitive files and folders
 	RewriteRule ^vendor(/|$) - [F,L,NC]
 	RewriteRule silverstripe-cache(/|$) - [F,L,NC]
