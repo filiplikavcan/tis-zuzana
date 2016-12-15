@@ -32,11 +32,15 @@
 	}
 
 	@include breakpoint(medium){
-		height: 70%;
+		height: 80%;
+		min-height: calc-rem(600);
 
 		&:before {
 			display: none;
 		}
+	}
+	@include breakpoint(large){
+		height: 80%;
 	}
 }
 

@@ -182,6 +182,9 @@
 	}
 	@include breakpoint(medium) {
 		 @include grid-layout($n: 2, $selector: "li");
+		 li {
+			 padding: calc-rem(2 5);
+		 }
 	}
 	@include breakpoint(large) {
 		 @include grid-layout($n: 4, $selector: "li");
@@ -207,6 +210,9 @@
 	@include breakpoint(medium) {
 		 @include grid-layout($n: 2, $selector: "li");
 		padding: calc-rem(8);
+		li {
+			padding: calc-rem(2 5);
+		}
 	}
 	@include breakpoint(large) {
 		 @include grid-layout($n: 3, $selector: "li");
