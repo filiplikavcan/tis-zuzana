@@ -4783,7 +4783,7 @@ footer {
     opacity: 1; } }
 
 .counter {
-  visibility: hidden;
+  display: none;
   height: 3.125rem;
   margin-bottom: 1.5rem; }
   .counter p {
