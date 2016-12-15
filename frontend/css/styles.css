@@ -4035,9 +4035,13 @@ select {
     background-color: rgba(0, 0, 0, 0.5); }
   @media screen and (min-width: 40em) {
     .hero-area {
-      height: 70%; }
+      height: 80%;
+      min-height: 37.5rem; }
       .hero-area:before {
         display: none; } }
+  @media screen and (min-width: 64em) {
+    .hero-area {
+      height: 80%; } }
 
 .hero-content {
   max-width: 75rem;
@@ -4790,6 +4794,8 @@ footer {
     font-size: 1.375rem; }
   @media screen and (min-width: 40em) {
     .counter {
+      display: block;
+      visibility: hidden;
       height: auto; }
       .counter p {
         margin-top: 1.25rem;

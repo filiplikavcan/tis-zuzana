@@ -30,6 +30,8 @@
     // font-weight: 400;
   }
   @include breakpoint(medium){
+    display: block;
+    visibility: hidden;
     height: auto;
 
     p {
