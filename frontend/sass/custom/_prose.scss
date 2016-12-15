@@ -139,9 +139,11 @@
 	margin: calc-rem(12) auto;
 	text-align: left;
 	counter-reset: li-counter;
+	margin-top: 53px;
 
 	li {
 		position: relative;
+		margin-top: 43px;
 		padding-left: calc-rem(30);
 
 		&:before {
