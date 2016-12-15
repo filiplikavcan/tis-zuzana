@@ -43,6 +43,20 @@ ErrorDocument 500 /assets/error-500.html
 	# Enable HTTP Basic authentication workaround for PHP running in CGI mode
 	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+    RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
+    RewriteCond %{QUERY_STRING} ^$
+    RewriteCond %{REQUEST_URI} /(.*[^/])/?$
+    RewriteCond %{DOCUMENT_ROOT}/html-cache/live/%1.html -f
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule .* /html-cache/live/%1.html [END]
+
+    RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
+    RewriteCond %{QUERY_STRING} ^$
+    RewriteCond %{REQUEST_URI} ^/?$
+    RewriteCond %{DOCUMENT_ROOT}/html-cache/live/home.html -f
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^/?$ /html-cache/live/home.html [END]
+
     RewriteCond %{REQUEST_URI} !^/images/it-.*$
     RewriteCond %{REQUEST_URI} ^/images(.*)$
     RewriteCond %{REQUEST_FILENAME} !-f
