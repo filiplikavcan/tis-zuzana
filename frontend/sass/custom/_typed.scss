@@ -26,26 +26,29 @@
   margin-bottom: calc-rem(24);
 
   p {
-    display: inline;
     font-size: calc-rem(22);
     // font-weight: 400;
   }
   @include breakpoint(medium){
     height: auto;
-    margin-bottom: calc-rem(32);
+
     p {
-      font-size: calc-rem(36);
+      margin-top: calc-rem(20);
+      font-size: calc-rem(22);
+      min-height: calc-rem(70);
     }
     .typed-cursor {
-      font-size: calc-rem(42)
+      font-size: calc-rem(22)
     }
   }
   @include breakpoint(large){
     p {
-      font-size: calc-rem(38);
+      margin-top: calc-rem(20);
+      font-size: calc-rem(28);
+      min-height: calc-rem(90);
     }
     .typed-cursor {
-      font-size: calc-rem(56)
+      font-size: calc-rem(28)
     }
   }
 }

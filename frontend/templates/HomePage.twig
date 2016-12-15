@@ -7,16 +7,16 @@
             <header class="hero-area">
                 <div class="hero-content">
                     <div class="content-column">
-                        {% set DaysMessage = c.Counter.Days > 0 ? (c.Counter.Days ~ (c.Counter.Days == 1 ? ' deň' : (c.Counter.Days < 5 ? ' dni' : ' dní'))) : '' %}
-                        {% set HoursMessage =  c.Counter.Hours > 0 ? (c.Counter.Hours ~ (c.Counter.Hours == 1 ? ' hodina' : (c.Counter.Hours < 5 ? ' hodiny' : ' hodín'))) : '' %}
+                        {% set DaysMessage = c.Counter.Days > 0 ? (c.Counter.Days ~ '&nbsp;' ~ (c.Counter.Days == 1 ? 'deň' : (c.Counter.Days < 5 ? 'dni' : 'dní'))) : '' %}
+                        {% set HoursMessage =  c.Counter.Hours > 0 ? (c.Counter.Hours ~ '&nbsp;' ~ (c.Counter.Hours == 1 ? 'hodina' : (c.Counter.Hours < 5 ? 'hodiny' : 'hodín'))) : '' %}
 
                         <h1>
                             {% if c.Counter.Supporters > 5000 %}Už <strong>{{ c.Counter.Supporters }} ľudí</strong> podporilo Zuzanu. {% endif %}
-                            {% if DaysMessage or HoursMessage %}Do konca výzvy zostáva <strong>{{ DaysMessage }}{{ DaysMessage and HoursMessage ? ' a ' : '' }}{{ HoursMessage }}</strong>. {% endif %}
-                            Pán minister odpovedal na <strong>{{ c.Counter.Answers }} {{ c.Counter.Answers == 1 ? 'otázku' : (c.Counter.Answers > 0 and c.Counter.Answers < 5 ? 'otázky' : 'otázok') }}!</strong>
+                            {% if DaysMessage or HoursMessage %}Do konca výzvy zostáva <strong>{{ DaysMessage|raw }}{{ DaysMessage and HoursMessage ? '&nbsp;a&nbsp;' : '' }}{{ HoursMessage|raw }}</strong>. {% endif %}
+                            Pán minister odpovedal na&nbsp;<strong>{{ c.Counter.Answers }}&nbsp;{{ c.Counter.Answers == 1 ? 'otázku' : (c.Counter.Answers > 0 and c.Counter.Answers < 5 ? 'otázky' : 'otázok') }}!</strong>
                         </h1>
                         <div class="counter" data-url="{{ c.SupportersUrl }}">
-                            <p>Zuzanu podporuje aj <span></span></p>
+                            <p>Zuzanu podporuje <span></span></p>
                         </div>
                         <a class="button button-absolute button-fb" href="https://www.facebook.com/sharer.php?title=Odpovedzte%20Zuzane&description=Podporujem%20Zuzanu%20a%20chcem%2C%20aby%20minister%20Laj%C4%8D%C3%A1k%20odpovedal%20na%20d%C3%B4le%C5%BEit%C3%A9%20ot%C3%A1zky%2C%20ktor%C3%A9%20sa%20p%C3%BDta.&u=http%3A%2F%2Fodpovedztezuzane.sk" target="_blank"><img src="/static/assets/icons/facebook-white-small.svg" alt="" />Zdielaj na Facebook</a>
                     </div>
