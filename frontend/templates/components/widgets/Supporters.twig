@@ -14,8 +14,10 @@
             </ul>
         </div>
 
-        <div class="more-column">
-            <a href="{{ LoadMoreLink }}" class="button show-more-supporters" data-loading="Čakajte prosím. Nahrávam..." data-loaded="Zobraziť viac">Zobraziť viac</a>
-        </div>
+        {% if Count > 100 %}
+            <div class="more-column">
+                <a href="{{ LoadMoreLink }}" class="button show-more-supporters" data-loading="Čakajte prosím. Nahrávam..." data-loaded="Zobraziť viac">Zobraziť viac</a>
+            </div>
+        {% endif %}
     </div>
 </div>
