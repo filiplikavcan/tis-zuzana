@@ -123,7 +123,7 @@ class Supporter extends DataObject
     {
         try
         {
-            $supporter->ConfirmationIDGenerator = DB::query('SELECT MAX(CAST(ConfirmationIDGenerator AS UNSIGNED)) + 1 FROM Supporter')->value();
+            $supporter->ConfirmationIDGenerator = (int) DB::query('SELECT MAX(CAST(ConfirmationIDGenerator AS UNSIGNED)) FROM Supporter')->value() + 1;
             $supporter->write();
         }
         catch (SS_DatabaseException $e)
