@@ -80,21 +80,24 @@ jQuery(document).ready(function($) {
 		var counter = $(this);
 
         $.getJSON(counter.data('url'), { for_hp: 'true' }).always(function(response) {
-            counter.css({
-            	visibility: 'visible'
-			});
-
 			var strings = $.map(response.Supporters.Supporters, function(supporter) {
                 return '<strong>' + supporter.Name + '</strong>';
 			});
 
-            $(".counter span").typed({
-                strings: strings,
-                typeSpeed: 0,
-                loop: true,
-                backDelay: 2000,
-                backSpeed: -50
-            });
+			if (strings.length > 0)
+			{
+                counter.css({
+                    visibility: 'visible'
+                });
+
+				$(".counter span").typed({
+                    strings: strings,
+                    typeSpeed: 0,
+                    loop: true,
+                    backDelay: 2000,
+                    backSpeed: -50
+                });
+            }
         });
 	});
 
