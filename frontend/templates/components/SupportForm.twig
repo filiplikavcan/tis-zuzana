@@ -1,6 +1,6 @@
 {% set FormFields = Form.Fields|map('Name') %}
 
-<div class="panel{% if not Form.Errors and not DisableBlue %} panel-support{% endif %}">
+<div class="panel{% if not Form.Errors and not DisableBlue %} panel-support{% endif %}{% if IsGray %} gray{% endif %}">
     <span class="anchor" id="{{ Form.Hash }}"></span>
     <div class="text-column no-margin">
         {% if Form.Errors %}
