@@ -1,5 +1,5 @@
 # tis-zuzana
-Web na podporu Zuzany
+[WEB](http://odpovedztezuzane.sk) Odpovedzte Zuzane
 
 ## Ako spustit web
 
