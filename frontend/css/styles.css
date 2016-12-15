@@ -4018,6 +4018,9 @@ select {
   .hero-area h1 {
     font-weight: 300;
     font-size: 2.625rem; }
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      .hero-area h1 {
+        font-size: 1.875rem; } }
     @media screen and (max-width: 39.9375em) {
       .hero-area h1 {
         font-size: 1.875rem; } }
@@ -4032,7 +4035,9 @@ select {
     background-color: rgba(0, 0, 0, 0.5); }
   @media screen and (min-width: 40em) {
     .hero-area {
-      height: 70%; } }
+      height: 70%; }
+      .hero-area:before {
+        display: none; } }
 
 .hero-content {
   max-width: 75rem;
@@ -4040,8 +4045,8 @@ select {
   margin-right: auto;
   position: relative;
   top: 55%;
-  text-align: center;
   color: white;
+  text-align: center;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
@@ -4061,6 +4066,36 @@ select {
         padding-right: 0.9375rem; } }
     .hero-content .content-column:last-child:not(:first-child) {
       float: right; }
+  @media screen and (min-width: 40em) {
+    .hero-content {
+      text-align: right; }
+      .hero-content .content-column {
+        width: 50%;
+        float: left;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem; } }
+    @media screen and (min-width: 40em) and (min-width: 40em) {
+      .hero-content .content-column {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+  @media screen and (min-width: 40em) {
+        .hero-content .content-column:last-child:not(:first-child) {
+          float: right; } }
+  @media screen and (min-width: 64em) {
+    .hero-content {
+      text-align: right; }
+      .hero-content .content-column {
+        width: 58.33333%;
+        float: left;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem; } }
+    @media screen and (min-width: 64em) and (min-width: 40em) {
+      .hero-content .content-column {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+  @media screen and (min-width: 64em) {
+        .hero-content .content-column:last-child:not(:first-child) {
+          float: right; } }
 
 .topbar {
   position: fixed;
@@ -4748,18 +4783,20 @@ footer {
   height: 3.125rem;
   margin-bottom: 1.5rem; }
   .counter p {
-    display: inline;
     font-size: 1.375rem; }
   @media screen and (min-width: 40em) {
     .counter {
-      height: auto;
-      margin-bottom: 2rem; }
+      height: auto; }
       .counter p {
-        font-size: 2.25rem; }
+        margin-top: 1.25rem;
+        font-size: 1.375rem;
+        min-height: 4.375rem; }
       .counter .typed-cursor {
-        font-size: 2.625rem; } }
+        font-size: 1.375rem; } }
   @media screen and (min-width: 64em) {
     .counter p {
-      font-size: 2.375rem; }
+      margin-top: 1.25rem;
+      font-size: 1.75rem;
+      min-height: 5.625rem; }
     .counter .typed-cursor {
-      font-size: 3.5rem; } }
+      font-size: 1.75rem; } }
