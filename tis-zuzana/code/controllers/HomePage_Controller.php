@@ -33,7 +33,7 @@ class HomePage_Controller extends Page_Controller
         return Cleopas\Widgets\Data\Data::create()
             ->Time(function() {
                 $start = new DateTime(date('Y-m-d H:i:s'));
-                $end = new DateTime('2016-12-20 10:00:00');
+                $end = new DateTime('2017-01-05 10:00:00');
                 $diff = $start->diff($end);
 
                 if ($diff->format('%R') == '+')
