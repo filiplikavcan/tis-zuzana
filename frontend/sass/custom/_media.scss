@@ -58,6 +58,12 @@
   .teaser-content {
     padding: calc-rem(6 12 12);
   }
+
+  .teaser-image {
+    background-position: center center;
+    background-size: cover;
+  }
+
   img{
     width: 100%;
   }

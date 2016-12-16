@@ -18,6 +18,8 @@ class Media extends DataObject
         'Title' => 'Názov',
     );
 
+    protected $cached_image = null;
+
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
@@ -29,6 +31,27 @@ class Media extends DataObject
 
     public function getImageUrl()
     {
-        return $this->Image()->getModifiedLink(array('w' => 500));
+        $image = $this->getImage();
+        return $image->exists() ? $image->getModifiedLink(array('w' => 500)) : '';
+    }
+
+    public function getImageTopPadding()
+    {
+        $image = $this->getImage();
+
+        return $image->exists() ? ($image->getWidth() / $image->getHeight()) * 100 : 0;
+    }
+
+    /**
+     * @return Image
+     */
+    public function getImage()
+    {
+        if (is_null($this->cached_image))
+        {
+            $this->cached_image = $this->Image();
+        }
+
+        return $this->cached_image;
     }
 }

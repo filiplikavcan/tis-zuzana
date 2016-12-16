@@ -21,7 +21,15 @@
                         {% for Item in c.Media.Items %}
                             <li class="grid-item">
                                 <a class="teaser" href="{{ Item.Link }}" target="_blank">
-                                    {% if Item.Image.Exists %}<img src="{{ Item.Image.Link }}" alt="{{ Item.Title }}">{% endif %}
+                                    {% if Item.Image.Exists %}
+                                        <style type="text/css" scoped>
+                                            #media-{{ Item.ID }} {
+                                                background-image: url({{ Item.Image.Link }});
+                                                padding-top: {{ Item.Image.TopPadding }}%;
+                                            }
+                                        </style>
+                                        <div id="media-{{ Item.ID }}" class="teaser-image"></div>
+                                    {% endif %}
                                     <div class="teaser-content">
                                         <h2>{{ Item.Title }}</h2>
                                         {% if Item.Description %}<p>{{ Item.Description }}</p>{% endif %}

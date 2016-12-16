@@ -3819,6 +3819,8 @@ main {
   .support-form .form-actions {
     padding-top: 0.75rem;
     text-align: center; }
+    .support-form .form-actions > input[type="button"] {
+      margin-top: 33px; }
   .support-form label {
     padding: 0.25rem 0 0;
     font-weight: 700; }
@@ -4441,9 +4443,11 @@ select {
   max-width: 31.25rem;
   margin: 0.75rem auto;
   text-align: left;
-  counter-reset: li-counter; }
+  counter-reset: li-counter;
+  margin-top: 53px; }
   .next-list li {
     position: relative;
+    margin-top: 43px;
     padding-left: 1.875rem; }
     .next-list li:before {
       counter-increment: li-counter;
@@ -4673,6 +4677,9 @@ select {
   transition-timing-function: ease-out; }
   .teaser .teaser-content {
     padding: 0.375rem 0.75rem 0.75rem; }
+  .teaser .teaser-image {
+    background-position: center center;
+    background-size: cover; }
   .teaser img {
     width: 100%; }
   .teaser h2 {

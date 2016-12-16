@@ -10,10 +10,12 @@
     ],
     "Items from getItems()": [
       {
+        "ID": "ID",
         "Title": "Title",
         "Description": "Description",
         "Link": "Link",
         "Image": {
+          "TopPadding": "getImageTopPadding()",
           "Exists": "Image().ID",
           "Link": "getImageUrl()"
         }
