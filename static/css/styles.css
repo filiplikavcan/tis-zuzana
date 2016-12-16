@@ -4677,6 +4677,9 @@ select {
   transition-timing-function: ease-out; }
   .teaser .teaser-content {
     padding: 0.375rem 0.75rem 0.75rem; }
+  .teaser .teaser-image {
+    background-position: center center;
+    background-size: cover; }
   .teaser img {
     width: 100%; }
   .teaser h2 {

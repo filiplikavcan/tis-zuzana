@@ -39,7 +39,7 @@ function main($)
 				}
 
 				if(count > 0) {
-					var last_id, html, list = $('.people-list:first');
+					var html, list = $('.people-list:first');
 
 					$.each(response.Supporters.Supporters, function(i, supporter) {
 						html = '<li><p><strong>' + supporter.Name + '</strong>';
@@ -105,7 +105,6 @@ function main($)
 		var input = $(this);
 		var value = input.val();
 
-
 		var select = $('<select name="Country"></select>');
 
 		$.each(COUNTRIES.sk, function(code, name) {
@@ -115,34 +114,34 @@ function main($)
 		input.replaceWith(select);
 	});
 
-	if ($(".teasers-list").length > 0)
-	{
-        $('.teasers-list').masonry({
-            // options
-            itemSelector: '.grid-item',
-            columnWidth: '.grid-sizer'
-        });
-	}
+    setTimeout(function()
+    {
+    	var teasers = $(".teasers-list");
+
+        if (teasers.length > 0)
+        {
+            teasers.masonry({
+                // options
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer'
+            });
+        }
+    }, 250);
 }
 
-(function() {
-    var INVOKE = true;
-    var init;
-    jQuery((init = function(documentready)
-    {
-        if (INVOKE)
-        {
-            main(jQuery);
+var INIT_BY_DOCUMENT_READY = true;
 
-            INVOKE = !documentready;
-        }
-        else
-        {
-            INVOKE = true;
-        }
-    }).bind(window, true));
-    document.addEventListener("turbolinks:load", init.bind(window, false));
-})();
+jQuery(document).ready(function() {
+	main(jQuery);
+    INIT_BY_DOCUMENT_READY = false;
+});
+
+document.addEventListener("turbolinks:load", function() {
+	if (!INIT_BY_DOCUMENT_READY)
+	{
+		main(jQuery);
+	}
+});
 
 jQuery(document).ready(function($) {
 	'use strict';
