@@ -39,7 +39,7 @@ class Media extends DataObject
     {
         $image = $this->getImage();
 
-        return $image->exists() ? ($image->getWidth() / $image->getHeight()) * 100 : 0;
+        return $image->exists() ? ($image->getHeight() / $image->getWidth()) * 100 : 0;
     }
 
     /**
