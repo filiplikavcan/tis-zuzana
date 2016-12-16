@@ -15,7 +15,7 @@ class Supporters extends Widget implements IRequestable
 
     public function getAllSupportersCount()
     {
-        return \Supporter::confirmed()->count();
+        return \Supporter::get()->count();
     }
 
     public function getSupporters()
