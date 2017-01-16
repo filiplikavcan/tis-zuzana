@@ -51,7 +51,7 @@ class HomePage_Controller extends Page_Controller
                     );
                 }
             })
-            ->Supporters(Supporter::confirmed()->count())
+            ->Supporters(Supporter::get()->count())
             ->Answers($this->Questions()->filter(array('IsAnswered' => true))->count());
     }
 
